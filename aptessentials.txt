@@ -1,0 +1,8 @@
+# aptessentials.txt
+# Contains basic apt programs to install
+
+vim
+net-tools
+tmux
+git
+firefox

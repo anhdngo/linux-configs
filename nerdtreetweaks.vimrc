@@ -1,3 +1,7 @@
+"""""""""""""""""""
+" NERDTREE TWEAKS "
+"""""""""""""""""""
+
 " Ctrl + n to toggle nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
@@ -5,7 +9,7 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeWinPos = "left"
 
 " Open nerdtree on vim start on a file
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 
 " Open nerdtree on vim start no files specified
 autocmd StdinReadPre * let s:std_in=1
