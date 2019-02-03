@@ -6,3 +6,5 @@ net-tools
 tmux
 git
 firefox
+openjdk-8-jdk
+python3-pip

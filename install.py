@@ -24,7 +24,7 @@ def installessentials():
             essentialprograms.append(line.strip())
 
     os.system('sudo apt install -y  ' + ' '.join(essentialprograms))
-    
+
 def installultimatevimrc():
     # clone repo and run installation
     os.system('git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime')
@@ -32,7 +32,7 @@ def installultimatevimrc():
 
     # cat nerdtree configs into vimrc
     os.system('cat ./nerdtreetweaks >> ~/.vimrc')
-    
+
 def miscconfigurations():
     # copy aliases file to correct location, source aliases in .bashrc
     # TODO
