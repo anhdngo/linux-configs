@@ -1,4 +1,4 @@
-#linux-configs
+# linux-configs
 Scripts and configurations to install on a new linux machine
 ## Setup
 1. First, clone this repo to your home directory.
