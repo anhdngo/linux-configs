@@ -4,8 +4,10 @@ alias l="ls"
 alias ll="ls -la"
 alias reload="exec $SHELL -l"
 alias rl="exec $SHELL -l"
+alias :q=exit
 
 # Shortcuts
+alias h="cd ~"
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
 alias doc="cd ~/Documents"
