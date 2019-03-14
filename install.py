@@ -10,9 +10,12 @@ def main():
 
     installessentials()
     installultimatevimrc()
-    miscconfigurations()
+    installdotbot()
+    installohmyzsh()
 
 def installessentials():
+    print('Installing essential apt packages...')
+
     # read essentials file
     with open(essentialspath, 'r') as essentials:
         for line in essentials:
@@ -25,7 +28,12 @@ def installessentials():
 
     os.system('sudo apt install -y  ' + ' '.join(essentialprograms))
 
+    # install git submodules
+    os.system('git submodule update --init')
+
 def installultimatevimrc():
+    print('Installing ultimate vimrc...')
+
     # clone repo and run installation
     os.system('git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime')
     os.system('sh ~/.vim_runtime/install_awesome_vimrc.sh')
@@ -33,16 +41,27 @@ def installultimatevimrc():
     # cat nerdtree configs into vimrc
     os.system('cat ./nerdtreetweaks >> ~/.vimrc')
 
-def miscconfigurations():
-    # copy aliases file to correct location, source aliases in .bashrc
-    # TODO
+def installdotbot():
+    print('Installing dotbot...')
 
-    # copy tmux configuration file to correct location
-    os.system('cp ./tmux.conf ~/.tmux.conf')
+    # allow dotbot to bootstrap dotfiles
+    os.system('./dotbot/bin/dotbot -c ./dotfiles.conf.yaml')
 
+def installohmyzsh():
+    print('Installing oh my zsh')
 
+    # installing oh-my-zsh
+    os.system('./tools/install.sh')
+    os.system('chsh -s zsh')
 
+def installthemes():
+    print('Installing themes')
 
+    # installing arc theme
+    os.system('cd ./arc-theme')
+    os.system('./autogen.sh')
+    os.system('sudo make install')
+    os.system('cd ..')
 
 if __name__ =='__main__':
     main()
