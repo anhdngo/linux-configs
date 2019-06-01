@@ -51,7 +51,7 @@ bindsym $altmod+b exec sensible-browser
 # c=code -> open vs code
 bindsym $altmod+c exec code
 # r=read -> open calibre
-bindsym $altmod+r calibre
+bindsym $altmod+r exec calibre
 # q=quit -> kill window
 bindsym $altmod+q kill
 
