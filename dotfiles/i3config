@@ -36,11 +36,24 @@ floating_modifier $mod
 bindsym $mod+Control+t exec i3-sensible-terminal
 
 # start a browser
-bindsym $mod+Control+b exec i3-sensible-browser
+bindsym $mod+Control+b exec sensible-browser
 
 # kill focused window
 bindsym $mod+Shift+q kill
-bindsym $altmod+d kill
+
+# Altmod Commands To Open Applications
+# o=open -> open launch menu
+bindsym $altmod+o exec dmenu_run
+# t=terminal -> open terminal
+bindsym $altmod+t exec i3-sensible-terminal
+# b=browser -> open default browser
+bindsym $altmod+b exec sensible-browser
+# c=code -> open vs code
+bindsym $altmod+c exec code
+# r=read -> open calibre
+bindsym $altmod+r calibre
+# q=quit -> kill window
+bindsym $altmod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
