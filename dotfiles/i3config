@@ -94,11 +94,11 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # toggle fullscreen for focused window
-bindsym $altmod+Control+j fullscreen toggle
+bindsym $altmod+Control+k fullscreen toggle
 bindsym $altmod+Control+Up fullscreen toggle
 bindsym $mod+f fullscreen toggle
 # toggle floating mode for focused window
-bindsym $altmod+Control+k floating toggle
+bindsym $altmod+Control+j floating toggle
 bindsym $altmod+Control+Down floating toggle
 bindsym $mod+Shift+space floating toggle
 
