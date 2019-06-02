@@ -165,6 +165,29 @@ bindsym $altmod+Control+0 move container to workspace $ws10; workspace $ws10
 bindsym $altmod+Control+Left move container to workspace prev; workspace prev
 bindsym $altmod+Control+Right move container to workspace next; workspace next
 
+# tmux mode: disable alt to switch between frames
+set $mode_tmux "tmux mode: everything is disabled except for workspace switching"
+mode $mode_tmux {
+    # switch to workspace
+    bindsym $altmod+1 workspace $ws1
+    bindsym $altmod+2 workspace $ws2
+    bindsym $altmod+3 workspace $ws3
+    bindsym $altmod+4 workspace $ws4
+    bindsym $altmod+5 workspace $ws5
+    bindsym $altmod+6 workspace $ws6
+    bindsym $altmod+7 workspace $ws7
+    bindsym $altmod+8 workspace $ws8
+    bindsym $altmod+9 workspace $ws9
+    bindsym $altmod+0 workspace $ws10
+    # switch workspace using left and right
+    bindsym $altmod+Left workspace prev
+    bindsym $altmod+Right workspace next
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+z mode $mode_tmux
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -196,26 +219,26 @@ bindsym $mod+Control+l exec $Locker
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
