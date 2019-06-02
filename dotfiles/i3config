@@ -53,8 +53,16 @@ bindsym $mod+Control+r exec calibre
 # q=quit -> kill window
 bindsym $mod+Control+q kill
 bindsym $mod+Control+BackSpace kill
+
 # start dmenu (a program launcher)
-bindsym $mod+Control+Space exec dmenu_run
+bindsym $mod+Control+space exec dmenu_run
+# set control+mod+direction to opening dmenu in that direction
+bindsym $mod+Control+Up focus up; split v; exec dmenu_run
+bindsym $mod+Control+Down split v; exec dmenu_run
+bindsym $mod+Control+Left focus left; split h; exec dmenu_run
+bindsym $mod+Control+Right split h; exec dmenu_run
+
+#bindsym $mod+ mode "open_app"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -101,12 +109,10 @@ bindsym $mod+Shift+space floating toggle
 # toggle split orientation
 bindsym $mod+v split toggle
 
-
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -216,4 +222,4 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Startup Commands
-exec sensible-browser
+#exec sensible-browser
