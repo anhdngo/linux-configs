@@ -81,6 +81,10 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+# enable alt+tab to change focus
+bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
+
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -146,9 +150,15 @@ bindsym $altmod+7 workspace $ws7
 bindsym $altmod+8 workspace $ws8
 bindsym $altmod+9 workspace $ws9
 bindsym $altmod+0 workspace $ws10
+
 # switch workspace using left and right
 bindsym $altmod+Left workspace prev
 bindsym $altmod+Right workspace next
+
+# enable alt+tab to change focus
+bindsym $altmod+Tab workspace next
+bindsym $altmod+Shift+Tab workspace prev
+
 
 # move focused container to workspace
 bindsym $altmod+Control+1 move container to workspace $ws1; workspace $ws1
