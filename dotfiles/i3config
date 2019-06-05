@@ -53,6 +53,7 @@ bindsym $mod+Control+r exec calibre
 # q=quit -> kill window
 bindsym $mod+Control+q kill
 bindsym $mod+Control+BackSpace kill
+bindsym Control+BackSpace kill
 
 # start dmenu (a program launcher)
 bindsym $mod+Control+space exec dmenu_run
@@ -117,6 +118,7 @@ bindsym $mod+v split toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+bindsym $mod+q layout toggle all
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
