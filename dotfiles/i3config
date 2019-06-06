@@ -276,6 +276,12 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Assign apps to default workspaces
+# Use xprop to get class
+assign [class="vlc"] $ws8
+assign [class="Atril"] $ws9
+assign [class="calibre"] $ws10
+
 # Startup Commands
 #exec sensible-browser
 #
