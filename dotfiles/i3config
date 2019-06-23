@@ -3,7 +3,8 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-#
+
+set $default_browser chromium-browser
 
 # i3 config file (v4)
 #
@@ -45,7 +46,7 @@ bindsym $mod+Control+o exec dmenu_run
 bindsym $mod+Control+t exec i3-sensible-terminal
 bindsym $mod+Control+Return exec i3-sensible-terminal
 # b=browser -> open default browser
-bindsym $mod+Control+b exec sensible-browser
+bindsym $mod+Control+b exec $default_browser
 # c=code -> open vs code
 bindsym $mod+Control+c exec code
 # r=read -> open calibre
