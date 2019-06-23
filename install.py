@@ -8,10 +8,17 @@ def main():
     if os.getuid() != 0:
         raise Exception("This program must be run with elevated permissions, rerun this script with sudo!")
 
-    installessentials()
-    installultimatevimrc()
-    installdotbot()
-    installohmyzsh()
+    # prompt user input for each component
+    prompt("Install essentials?", installessentials)
+    prompt("Install ultimate vimrc?", installultimatevimrc)
+    prompt("Install dotbot?", installdotbot)
+    prompt("Install ohmyzsh?", installohmyzsh)
+    prompt("Install themes?", installthemes)
+
+def prompt(promptstring, installfunc):
+    txt = input(promptstring + " [y/N]")
+    if(txt.lower() == 'y'):
+        installfunc()
 
 def installessentials():
     print('Installing essential apt packages...')

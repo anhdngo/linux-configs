@@ -6,14 +6,26 @@ vim
 net-tools
 tmux
 git
-firefox
+#firefox
+chromium-browser
 openjdk-8-jdk
 python3
 python3-pip
 fonts-powerline
+
+# i3
+i3
+feh
+xbacklight
 
 # arc theme
 autoconf
 automake
 pkg-config
 libgtk-3-dev
+
+# other
+vlc
+cowsay
+fortune
+lolcat
