@@ -4,6 +4,7 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 
+set $linux_configs /home/anhdngo/workspace/linux-configs
 set $default_browser chromium-browser
 
 # i3 config file (v4)
@@ -279,10 +280,9 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Assign apps to default workspaces
 # Use xprop to get class
-assign [class="vlc"] $ws8
-assign [class="Atril"] $ws9
+#assign [class="vlc"] $ws8
+#assign [class="Atril"] $ws9
 assign [class="calibre"] $ws10
 
-# Startup Commands
-#exec sensible-browser
-#
+# Desktop Wallpaper
+exec_always feh --bg-scale --randomize $linux_configs/wallpapers/*
