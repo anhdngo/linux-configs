@@ -101,12 +101,12 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # toggle fullscreen for focused window
-bindsym $altmod+Control+k fullscreen toggle
-bindsym $altmod+Control+Up fullscreen toggle
+bindsym $altmod+k fullscreen toggle
+bindsym $altmod+Up fullscreen toggle
 bindsym $mod+f fullscreen toggle
 # toggle floating mode for focused window
-bindsym $altmod+Control+j floating toggle
-bindsym $altmod+Control+Down floating toggle
+bindsym $altmod+j floating toggle
+bindsym $altmod+Down floating toggle
 bindsym $mod+Shift+space floating toggle
 
 # split in horizontal orientation
@@ -166,16 +166,16 @@ bindsym $altmod+Tab workspace next
 bindsym $altmod+Shift+Tab workspace prev
 
 # move focused container to workspace
-bindsym $altmod+Control+1 move container to workspace $ws1; workspace $ws1
-bindsym $altmod+Control+2 move container to workspace $ws2; workspace $ws2
-bindsym $altmod+Control+3 move container to workspace $ws3; workspace $ws3
-bindsym $altmod+Control+4 move container to workspace $ws4; workspace $ws4
-bindsym $altmod+Control+5 move container to workspace $ws5; workspace $ws5
-bindsym $altmod+Control+6 move container to workspace $ws6; workspace $ws6
-bindsym $altmod+Control+7 move container to workspace $ws7; workspace $ws7
-bindsym $altmod+Control+8 move container to workspace $ws8; workspace $ws8
-bindsym $altmod+Control+9 move container to workspace $ws9; workspace $ws9
-bindsym $altmod+Control+0 move container to workspace $ws10; workspace $ws10
+bindsym $altmod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $altmod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $altmod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $altmod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $altmod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $altmod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $altmod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $altmod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $altmod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $altmod+Shift+0 move container to workspace $ws10; workspace $ws10
 # move focused container to next/prev workspace
 bindsym $altmod+Shift+Left move container to workspace prev; workspace prev
 bindsym $altmod+Shift+Right move container to workspace next; workspace next
