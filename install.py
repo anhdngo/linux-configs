@@ -51,6 +51,8 @@ def installultimatevimrc():
 def installdotbot():
     print('Installing dotbot...')
 
+    os.system('pip install dotbot')
+
     # allow dotbot to bootstrap dotfiles
     os.system('./dotbot/bin/dotbot -c ./dotfiles.conf.yaml')
 
@@ -58,7 +60,7 @@ def installohmyzsh():
     print('Installing oh my zsh')
 
     # installing oh-my-zsh
-    os.system('./tools/install.sh')
+    os.system('./oh-my-zsh/tools/install.sh')
     os.system('chsh -s zsh')
 
 def installthemes():
