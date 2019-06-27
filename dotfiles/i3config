@@ -52,6 +52,8 @@ bindsym $mod+Control+b exec $default_browser
 bindsym $mod+Control+c exec code
 # r=read -> open calibre
 bindsym $mod+Control+r exec calibre
+# s=spotify-> open spotify
+bindsym $mod+Control+s exec spotify
 # q=quit -> kill window
 bindsym $mod+Control+q kill
 bindsym $mod+Control+BackSpace kill
@@ -287,7 +289,9 @@ bindsym XF86AudioPrev exec playerctl previous
 # Use xprop to get class
 #assign [class="vlc"] $ws8
 #assign [class="Atril"] $ws9
-assign [class="calibre"] $ws10
+assign [class="calibre"] $ws9
+#assign [class="Spotify"] $ws10
+for_window [class="Spotify"] move to workspace $ws10  
 
 # Desktop Wallpaper
 exec_always feh --bg-scale --randomize $linux_configs/wallpapers/*
