@@ -46,7 +46,7 @@ def installultimatevimrc():
     os.system('sh ~/.vim_runtime/install_awesome_vimrc.sh')
 
     # cat nerdtree configs into vimrc
-    os.system('cat ./nerdtreetweaks >> ~/.vimrc')
+    os.system('cat ./nerdtreetweaks.vimrc >> ~/.vimrc')
 
 def installdotbot():
     print('Installing dotbot...')
@@ -54,7 +54,7 @@ def installdotbot():
     os.system('pip install dotbot')
 
     # allow dotbot to bootstrap dotfiles
-    os.system('./dotbot/bin/dotbot -c ./dotfiles.conf.yaml')
+    os.system('./dotbot/bin/dotbot -c ./dotfiles/dotbot.conf.yaml')
 
 def installohmyzsh():
     print('Installing oh my zsh')

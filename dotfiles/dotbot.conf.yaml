@@ -6,12 +6,20 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.tmux.conf: tmux.conf
-    ~/.vimrc: vimrc
+    ~/.tmux.conf:
+        path: tmux.conf
+        create: true
+        relink: true
+    ~/.vimrc:
+        path: vimrc
+        create: true
+        relink: true
     ~/.terminalrc: terminalrc
     ~/.bash_aliases: aliases
     ~/.aliases: aliases
-    ~/.config/i3/config: i3config
+    ~/.config/i3/config:
+        path: i3config
+        create: true
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
