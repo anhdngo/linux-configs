@@ -317,9 +317,9 @@ bindsym XF86AudioPrev exec playerctl previous
 # Use xprop to get class
 #assign [class="vlc"] $ws8
 #assign [class="Atril"] $ws9
-assign [class="calibre"] $wsread
+#assign [class="calibre"] $wsread
 #assign [class="Spotify"] $wsmusic
-for_window [class="Spotify"] move to workspace $wsmusic  
+#for_window [class="Spotify"] move to workspace $wsmusic  
 
 # Desktop Wallpaper
 exec_always feh --bg-scale --randomize $linux_configs/wallpapers/*
