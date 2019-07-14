@@ -12,6 +12,8 @@ alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
 alias doc="cd ~/Documents"
 alias ws="cd ~/workspace"
+alias cws="cd ~/catkin_ws"
+alias gws="cd ~/go"
 
 # Cheatsheets
 alias i3cheatsheet='grep '^bind' .config/i3/config | cut -d " " -f 2- | column | less'
