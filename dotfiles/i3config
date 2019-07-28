@@ -58,6 +58,8 @@ bindsym $mod+Control+s exec spotify
 bindsym $mod+Control+q kill
 bindsym $mod+Control+BackSpace kill
 bindsym Control+BackSpace kill
+# e=explorer -> open explorer
+bindsym $mod+Control+e exec thunar
 
 # start dmenu (a program launcher)
 bindsym $mod+Control+space exec dmenu_run
