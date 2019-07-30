@@ -1,9 +1,0 @@
-[submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh
-[submodule "arc-theme"]
-	path = arc-theme
-	url = https://github.com/horst3180/arc-theme

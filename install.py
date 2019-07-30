@@ -53,11 +53,17 @@ def installdotbot():
 
     os.system('pip install dotbot')
 
+    # clone repo
+    os.system('git clone https://github.com/anishathalye/dotbot.git')
+
     # allow dotbot to bootstrap dotfiles
     os.system('./dotbot/bin/dotbot -c ./dotfiles/dotbot.conf.yaml')
 
 def installohmyzsh():
     print('Installing oh my zsh')
+
+    # clone repo
+    os.system('git clone https://github.com/robbyrussell/oh-my-zsh.git')
 
     # installing oh-my-zsh
     os.system('./oh-my-zsh/tools/install.sh')
@@ -65,6 +71,9 @@ def installohmyzsh():
 
 def installthemes():
     print('Installing themes')
+
+    # clone repo
+    os.system('git clone https://github.com/horst3180/arc-theme.git')
 
     # installing arc theme
     os.system('cd ./arc-theme')
