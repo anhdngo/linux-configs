@@ -48,6 +48,8 @@ bindsym $mod+Control+t exec i3-sensible-terminal
 bindsym $mod+Control+Return exec i3-sensible-terminal
 # b=browser -> open default browser
 bindsym $mod+Control+b exec $default_browser
+# B=browser -> open default incognito browser
+bindsym $mod+Control+Shift+b exec $default_browser --incognito
 # c=code -> open vs code
 bindsym $mod+Control+c exec code
 # r=read -> open calibre
