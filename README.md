@@ -4,18 +4,8 @@ Scripts and configurations to install on a new linux machine
 1. First, clone this repo to your home directory.
 ```
 cd ~
-git clone https://github.com/anhdngo/linux-configs.git 
-cd ~/linux_configs
-```
-2. Then, install git submodules.
-```
-git submodule update --init
-```
-- Alternatively, you can recursively clone the repository, automatically cloning the submodules.
-```
-cd ~
-git clone --recursive https://github.com/anhdngo/linux-configs.git
-cd ~/linux_configs
+git clone --depth=1 https://github.com/anhdngo/linux-configs.git ~/.linux_configs 
+cd ~/.linux_configs
 ```
 
 ### Dotbot
@@ -27,13 +17,12 @@ Dotfiles Included:
 - vimrc
 - tmux
 - bash_aliases
+- i3
 
 ### Install Scripts
 UNDER DEVELOPMENT
-You can test it out by running install.sh or install.py, but I take no responsibility if your computer bursts into flames!
-```
-sudo ./install.sh
-```
+THE DEVELOPER TAKES NO RESPONSIBILITY FOR ANY DAMAGE TO THE COMPUTER OR THE USER
+SUCH DAMAGE MAY INCLUDE CUTS, BURNS, BRAIN DAMAGE, DEATH, AND ACCIDENTAL INSTALLATION OF THE WINDOWS OS
 ```
 sudo python3 install.py
 ```
