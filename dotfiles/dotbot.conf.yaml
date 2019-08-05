@@ -11,10 +11,12 @@
         path: tmux.conf
     ~/.vimrc:
         path: vimrc
-    ~/.terminalrc: terminalrc
-    ~/.aliases: aliases
+    ~/.aliases:
+        path: aliases
     ~/.config/i3/config:
         path: i3config
+    ~/.zshrc:
+        path: zshrc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

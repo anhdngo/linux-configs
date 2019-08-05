@@ -2,12 +2,17 @@
 alias sl="ls"
 alias l="ls"
 alias ll="ls -la"
-alias reload="exec $SHELL -l"
 alias rl="exec $SHELL -l"
 alias :q=exit
+alias c=clear
 
-# Shortcuts
+# Open File/Application, Detach from Terminal
+xdg() { nohup xdg-open $1 & }
+run() { nohup $1 & }
+
+# Directory Shortcuts
 alias h="cd ~"
+alias rt="cd /"
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
 alias doc="cd ~/Documents"
