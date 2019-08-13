@@ -7,8 +7,8 @@ alias :q=exit
 alias c=clear
 
 # Open File/Application, Detach from Terminal
-xdg() { nohup xdg-open $1 & }
-run() { nohup $1 & }
+xdg() { nohup xdg-open $1 >/dev/null 2>&1  & }
+run() { nohup $1 >/dev/null 2>&1 & }
 
 # Directory Shortcuts
 alias h="cd ~"
