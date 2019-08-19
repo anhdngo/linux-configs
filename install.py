@@ -14,6 +14,7 @@ def main():
     prompt("Install dotbot?", installdotbot)
     prompt("Install ohmyzsh?", installohmyzsh)
     prompt("Install themes?", installthemes)
+    prompt("Install pyenv?", installpyenv)
 
 def prompt(promptstring, installfunc):
     txt = input(promptstring + " [y/N]")
@@ -80,6 +81,12 @@ def installthemes():
     os.system('./autogen.sh')
     os.system('sudo make install')
     os.system('cd ..')
+
+def installpyenv():
+    print('Installing pyenv')
+
+    # clone repo
+    os.system('git clone https://github.com/pyenv/pyenv.git ~/.pyenv')
 
 if __name__ =='__main__':
     main()
