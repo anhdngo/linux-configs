@@ -88,5 +88,13 @@ def installpyenv():
     # clone repo
     os.system('git clone https://github.com/pyenv/pyenv.git ~/.pyenv')
 
+def installSpacemacs():
+    print("Installing spacemacs")
+
+    # remove emacs config directory
+    os.system('sudo apt install -y emacs')
+    os.system('rm -rf ~/.emacs.d')
+    os.system('git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d')
+
 if __name__ =='__main__':
     main()

@@ -111,3 +111,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 fortune | cowsay | lolcat
+
+# added by travis gem
+[ -f /home/anhdngo/.travis/travis.sh ] && source /home/anhdngo/.travis/travis.sh

@@ -6,6 +6,8 @@ alias rl="exec $SHELL -l"
 alias :q=exit
 alias c=clear
 
+alias emacs="emacs -nw"
+
 # Open File/Application, Detach from Terminal
 xdg() { nohup xdg-open $1 >/dev/null 2>&1  & }
 run() { nohup $1 >/dev/null 2>&1 & }
