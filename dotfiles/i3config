@@ -54,8 +54,10 @@ bindsym $mod+Control+Shift+b exec $default_browser --incognito
 bindsym $mod+Control+c exec code
 # r=read -> open calibre
 bindsym $mod+Control+r exec calibre
-# s=spotify-> open spotify
+# s=spotify -> open spotify
 bindsym $mod+Control+s exec spotify
+# g=game/godot -> open game engine 
+bindsym $mod+Control+g exec /opt/$(ls /opt | grep Godot | head -n 1)
 # q=quit -> kill window
 bindsym $mod+Control+q kill
 bindsym $mod+Control+BackSpace kill
