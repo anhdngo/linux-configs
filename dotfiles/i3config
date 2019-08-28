@@ -4,7 +4,7 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 
-set $linux_configs /home/anhdngo/workspace/linux-configs
+set $linux_configs /home/anhdngo/.linux_configs
 set $default_browser chromium-browser
 
 # i3 config file (v4)
