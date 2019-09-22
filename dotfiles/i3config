@@ -326,4 +326,4 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always feh --bg-scale --randomize $linux_configs/wallpapers/*
 
 # Set Grayscale
-exec_always compton --backend glx --glx-fshader-win "$(cat $linux_configs/grayscale.glsl)"
+# exec_always compton --backend glx --glx-fshader-win "$(cat $linux_configs/grayscale.glsl)"
