@@ -21,6 +21,11 @@ alias doc="cd ~/Documents"
 alias ws="cd ~/workspace"
 alias cws="cd ~/catkin_ws"
 alias gws="cd ~/go"
+alias tuas="cd ~/workspace/tuas"
+
+# App Shortcuts
+alias vpn="/opt/cisco/anyconnect/bin/vpn connect vpn.ucsd.edu"
+alias vpnd="/opt/cisco/anyconnect/bin/vpn disconnect vpn.ucsd.edu"
 
 # Cheatsheets
 alias i3cheatsheet='grep '^bind' .config/i3/config | cut -d " " -f 2- | column | less'
