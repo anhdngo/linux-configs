@@ -78,6 +78,7 @@ nnoremap <leader>a :Ag
 :let g:ctrlp_working_path_mode = 0                  " allows working directory change
 :let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " use ag to search
 nnoremap <leader>s :CtrlP<CR>
+nnoremap <C-p>s :CtrlP<CR>
 " }}}
 
 " Pathogen {{{
