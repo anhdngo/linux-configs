@@ -15,6 +15,7 @@ set cursorline      " underline current line
 filetype indent on  " load filetype-specific indent files
 set wildmenu        " visual autocomplete for command menu
 set showmatch       " highlight matching [{(}}]
+set ruler           " Show line number on bottom right of screen
 " }}}
 
 " Searching {{{
@@ -51,22 +52,28 @@ nnoremap gV `[v`]
 inoremap jj <Esc>   " binds jj to Esc  
 " }}}
 
+" Programming {{{
+set backspace=indent,eol,start  " Proper backspace behavior
+" }}}
+
 " Leader Shortcuts {{{
 let mapleader=","   " leader is comma
 
 " open ag.vim
-nnoremap <leader>a :Ag<CR>
+nnoremap <leader>a :Ag
 " }}}
 
-" CtrlP settings {{{
+" Fuzzy Finder{{{
+" CtrlP
 :let g:ctrlp_match_window = 'bottom,order:ttb'      " ctrlp lists files top to bottom
 :let g:ctrlp_switch_buffer = 0                      " always open new buffer
 :let g:ctrlp_working_path_mode = 0                  " allows working directory change
 :let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " use ag to search
+nnoremap <leader>s :CtrlP<CR>
 " }}}
 
 " Pathogen {{{
-" call pathogen#infect()                      " use pathogen
+call pathogen#infect()                      " use pathogen
 " call pathogen#runtime_append_all_bundles()  " use pathogen
 " }}}
 
