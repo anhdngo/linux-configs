@@ -264,9 +264,6 @@ mode "$mode_system" {
 bindsym $mod+Control+Escape mode "$mode_system"
 bindsym $mod+Control+Delete mode "$mode_system"
 
-# suspend computer
-bindsym $mod+Control+l exec $Locker
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
