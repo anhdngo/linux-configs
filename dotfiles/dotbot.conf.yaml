@@ -17,6 +17,8 @@
         path: i3config
     ~/.zshrc:
         path: zshrc
+    ~/.SpaceVim.d/init.toml:
+        path: spacevim.toml
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
