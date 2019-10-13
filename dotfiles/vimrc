@@ -1,7 +1,5 @@
 colorscheme elflord
 
-syntax enable       " enable syntax processing
-
 " Spaces & Tabs {{{
 set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
@@ -53,7 +51,17 @@ inoremap jj <Esc>   " binds jj to Esc
 " }}}
 
 " Programming {{{
+syntax enable       " enable syntax processing
 set backspace=indent,eol,start  " Proper backspace behavior
+" }}}
+
+" Backups {{{
+" move backups to tmp folder
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
 " }}}
 
 " Leader Shortcuts {{{
