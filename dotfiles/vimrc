@@ -4,6 +4,8 @@ colorscheme elflord
 set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are expanded to spaces
+set smarttab        " auto indents
+set shiftwidth=4    " stops smarttab from double-indenting
 " }}}
 
 " UI Config {{{
