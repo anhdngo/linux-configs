@@ -325,3 +325,8 @@ exec_always feh --bg-scale --randomize $linux_configs/wallpapers/*
 
 # Set Grayscale
 # exec_always compton --backend glx --glx-fshader-win "$(cat $linux_configs/grayscale.glsl)"
+
+# i3-gaps
+gaps inner 5
+gaps outer 5
+for_window [class="^.*"] border pixel 3
