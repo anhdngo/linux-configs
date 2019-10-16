@@ -67,8 +67,6 @@ set writebackup
 " }}}
 
 " Leader Shortcuts {{{
-let mapleader=","   " leader is comma
-
 " open ag.vim
 nnoremap <leader>a :Ag
 " }}}
