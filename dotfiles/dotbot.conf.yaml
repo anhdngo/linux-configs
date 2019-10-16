@@ -17,6 +17,8 @@
         path: i3config
     ~/.zshrc:
         path: zshrc
+    ~/.config/compton.conf:
+        path: compton.conf
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
