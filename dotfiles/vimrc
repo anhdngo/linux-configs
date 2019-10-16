@@ -49,7 +49,7 @@ noremap E $
 nnoremap gV `[v`]
 
 " jj to exit insert mode 
-inoremap jj <Esc>   " binds jj to Esc  
+inoremap jj <Esc>" binds jj to Esc  
 " }}}
 
 " Programming {{{
