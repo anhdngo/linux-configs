@@ -8,7 +8,7 @@
 - link:
     ~/.dotfiles: ''
     ~/.tmux.conf:
-        path: tmux.conf
+        path: tmux
     ~/.vimrc:
         path: vimrc
     ~/.aliases:
@@ -18,7 +18,9 @@
     ~/.zshrc:
         path: zshrc
     ~/.config/compton.conf:
-        path: compton.conf
+        path: compton
+    ~/.config/terminator/config:
+        path: terminator
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
