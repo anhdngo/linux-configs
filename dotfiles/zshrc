@@ -110,7 +110,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
 
-fortune | cowsay | lolcat
+fortune | cowsay -f ~/.linux_configs/assets/snail.cow | lolcat
 
 # added by travis gem
 [ -f /home/anhdngo/.travis/travis.sh ] && source /home/anhdngo/.travis/travis.sh
