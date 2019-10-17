@@ -1,0 +1,45 @@
+# aptessentials.txt
+# Contains basic apt programs to install
+
+Ubuntu-Packages:
+    
+    Utils:
+        - net-tools
+        - curl
+        - wget
+        - scrot
+
+    Development:
+        - make
+        - git
+        - python3
+        - python3-pip
+        - openjdk-8-jdk
+
+    Terminal:
+        - zsh
+        - tmux
+        - fonts-powerline
+        - terminator
+
+        - chromium-browser
+
+    Vim:
+        - vim
+        - silversearcher-ag
+
+    i3:
+        - i3
+        - feh
+        - xbacklight
+        - compton
+
+    Other:
+        - vlc
+        - cowsay
+        - fortune
+        - lolcat
+
+    Visual:
+        - fonts-dejavu
+        - fonts-powerline
