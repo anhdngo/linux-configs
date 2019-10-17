@@ -43,3 +43,5 @@ Ubuntu-Packages:
     Visual:
         - fonts-dejavu
         - fonts-powerline
+        - fonts-font-awesome
+        - fonts-octicons

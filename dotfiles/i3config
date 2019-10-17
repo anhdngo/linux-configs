@@ -258,7 +258,7 @@ bar {
     hidden_state hide
     modifier $win
     # show status
-    status_command i3status
+    status_command $linux_configs/bumblebee-status/bumblebee-status -m pomodoro nic battery date time pasink pasource -p root.path=/ time.format="%I:%M %p" date.format="%a, %b %d %Y" nic.exclude="ham0,docker0,lo" -t greyish-powerline
     # fonts
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
     font pango:DejaVu Sans Mono 8
