@@ -33,6 +33,7 @@ Ubuntu-Packages:
         - feh
         - xbacklight
         - compton
+        - ranger
 
     Other:
         - vlc

@@ -54,7 +54,8 @@ bindsym Control+q kill
 bindsym Control+BackSpace kill
 bindsym $alt+Control+Backspace kill
 # e=explorer -> open explorer
-bindsym $alt+Control+e exec thunar
+bindsym $alt+Control+e exec i3-sensible-terminal -e ranger
+bindsym $alt+Control+Shift+e exec thunar
 
 # start dmenu (a program launcher)
 bindsym $alt+Control+space exec dmenu_run
