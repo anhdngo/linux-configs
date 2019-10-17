@@ -51,8 +51,8 @@ bindsym $mod+Control+g exec /opt/$(ls /opt | grep Godot | head -n 1)
 
 # q=quit -> kill window
 bindsym Control+q kill
-bindsym $mod+Control+q kill
 bindsym Control+BackSpace kill
+bindsym $mod+Control+Backspace kill
 # e=explorer -> open explorer
 bindsym $mod+Control+e exec thunar
 
