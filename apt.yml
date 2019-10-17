@@ -34,6 +34,7 @@ Ubuntu-Packages:
         - xbacklight
         - compton
         - ranger
+        - ffmpeg
 
     Other:
         - vlc
