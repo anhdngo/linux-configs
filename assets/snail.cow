@@ -1,5 +1,8 @@
 $the_cow = <<"EOC";
-           $thoughts
+        $thoughts      _
+         $thoughts    | |
+          $thoughts   | |
+           $thoughts _|_|_
     .----.   @   @
    / .-"-.`.  \\v/
    | | '\\ \\ \\_/ )
