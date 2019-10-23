@@ -21,7 +21,7 @@ alias doc="cd ~/Documents"
 alias ws="cd ~/workspace"
 alias cws="cd ~/catkin_ws"
 alias gws="cd ~/go"
-alias tuas="cd ~/workspace/tuas"
+alias tuas="cd ~/tuas"
 
 # App Shortcuts
 alias vpn="/opt/cisco/anyconnect/bin/vpn connect vpn.ucsd.edu"
