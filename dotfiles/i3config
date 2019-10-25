@@ -2,7 +2,6 @@
 # this file and re-run i3-config-wizard(1).
 
 set $linux_configs $HOME/.linux_configs
-set $browser chromium-browser
 
 # BINDING STANDARDS:
 # mod is used for manipulating windows within one workspace
@@ -35,9 +34,6 @@ font pango:DejaVu Sans Mono 8
 bindsym $alt+Control+t exec i3-sensible-terminal
 bindsym $alt+Control+Return exec i3-sensible-terminal
 bindsym $alt+Control+Shift+t exec i3-sensible-terminal -e tmux new
-
-bindsym $alt+Control+b exec $browser
-bindsym $alt+Control+Shift+b exec $browser --incognito
 
 bindsym $alt+Control+r exec calibre
 bindsym $alt+Control+s exec spotify
@@ -179,7 +175,7 @@ bindsym $alt+Shift+c reload
 bindsym $alt+Shift+r restart
 # }}}
 
-# X Session Control {{{
+# X Session/System Mode {{{
 # exit i3 (logs you out of your X session)
 bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -188,8 +184,8 @@ bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #set $Locker $linux_configs/assets/lock.sh
 set $Locker $HOME/.linux_configs/assets/lock.sh
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-mode "$mode_system" {
+set $mode_system "System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown"
+mode $mode_system {
     bindsym l exec --no-startup-id $Locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
@@ -201,12 +197,12 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $alt+Control+Escape mode "$mode_system"
-bindsym $alt+Control+Delete mode "$mode_system"
+bindsym $alt+Control+Escape mode $mode_system
+bindsym $alt+Control+Delete mode $mode_system
 
 # }}}
 
-# Resize {{{
+# Resize Mode {{{
 # resize window (you can also use the mouse for that)
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
@@ -228,6 +224,24 @@ mode "resize" {
 }
 
 bindsym $alt+r mode "resize"
+# }}}
+
+# Browser Mode {{{
+set $browser chromium-browser
+
+set $browser_mode "(i) incognito, (m) messenger"
+
+mode $browser_mode {
+    bindsym i exec $browser --incognito, mode "default"
+    bindsym m exec $browser "messenger.com", mode "default"
+    
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $alt+Control+b exec $browser
+bindsym $alt+Control+Shift+b exec $browser --incognito
+bindsym $alt+Control+o mode $browser_mode
+
 # }}}
 
 # i3 Bar {{{ 
