@@ -275,6 +275,13 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 # }}}
 
+# Screenshot {{{
+# Takes screenshot with scrot, then uses xclip to save that to clipboard
+bindsym --release $alt+p exec scrot -s -e 'xclip -selection c -t image/png < $f'
+bindsym --release $alt+Shift+p exec scrot -e 'xclip -selection c -t image/png < $f'
+bindsym --release $alt+$win+p exec scrot -u -e 'xclip -selection c -t image/png < $f'
+# }}}
+
 # Default Workspaces {{{
 # Assign apps to default workspaces
 # Use xprop to get class
