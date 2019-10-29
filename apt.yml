@@ -8,6 +8,7 @@ Ubuntu-Packages:
         - curl
         - wget
         - scrot
+        - pinta
 
     Development:
         - make
@@ -36,6 +37,7 @@ Ubuntu-Packages:
         - ranger
         - ffmpeg
         - xclip
+        - xdotool
 
     Other:
         - vlc
