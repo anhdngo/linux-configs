@@ -24,6 +24,8 @@
         path: terminator
     ~/.config/xfce4/terminal/terminalrc:
         path: xfce4-terminal
+    ~/.Xresources:
+        path: Xresources
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

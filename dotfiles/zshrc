@@ -99,10 +99,6 @@ source ~/.aliases
 # Source go environment
 export PATH=/home/anhdngo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin || echo "Failed to source golang environment"
 
-# Source ros environment
-source /opt/ros/melodic/setup.zsh || echo "Failed to source ros environment"
-#source ~/catkin_ws/devel/setup.zsh || echo "Failed to source catkin_ws"
-
 # Source pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -114,3 +110,13 @@ fortune | cowsay -f ~/.linux_configs/assets/snail.cow | lolcat
 
 # added by travis gem
 [ -f /home/anhdngo/.travis/travis.sh ] && source /home/anhdngo/.travis/travis.sh
+
+source $HOME/.cargo/env
+
+export PATH=$PATH:$HOME/ardupilot/Tools/autotest
+export PATH=/usr/lib/ccache:$PATH
+
+export PATH=/opt/gcc-arm-none-eabi-6-2017-q2-update/bin:$PATH
+export PATH=/home/anhdngo/tuas/ardupilot/Tools/autotest:$PATH
+
+export XENVIRONMENT="${HOME}/.Xresources"
