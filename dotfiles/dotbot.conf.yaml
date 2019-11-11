@@ -26,6 +26,8 @@
         path: xfce4-terminal
     ~/.Xresources:
         path: Xresources
+    ~/.gitconfig:
+        path: gitconfig
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

@@ -1,0 +1,9 @@
+[user]
+	name = Anh Ngo
+	email = adn057@ucsd.edu
+[core]
+	editor = vim
+[alias]
+    cane = commit --amend --no-edit
+    lo = log --oneline
+    s = status
