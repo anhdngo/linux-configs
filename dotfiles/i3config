@@ -120,9 +120,9 @@ mode "mouse" {
 
 	# set your three speeds here
 
-	set $slow 1
-	set $quick 10
-	set $fast 50
+	set $slow 10
+	set $quick 100
+	set $fast 500
 
 	# Mouse movement (slow/fine-tuned) -- vim keybindings
 
@@ -169,33 +169,34 @@ mode "mouse" {
 	# Left Click
 	bindsym f exec xdotool click 1
 
-	# Middle Click
-	bindsym d exec xdotool click 2
-
 	# Right Click
-	bindsym s exec xdotool click 3
+	bindsym d exec xdotool click 3
+
+	# Middle Click
+	bindsym s exec xdotool click 2
 
 	# Left Click-and-drag
 	bindsym Shift+f exec xdotool mousedown 1
 
-	# Middle Click-and-drag 
-	bindsym Shift+d exec xdotool mousedown 2
+	# Right Click-and-drag 
+	bindsym Shift+d exec xdotool mousedown 3
 
-	# Right Click-and-drag
-	bindsym Shift+s exec xdotool mousedown 3
+	# Middle Click-and-drag
+	bindsym Shift+s exec xdotool mousedown 2
 
 	# Left Drag release
 	bindsym $alt+f exec xdotool mouseup 1
 
-	# Middle Drag release
-	bindsym $alt+d exec xdotool mouseup 2
-
 	# Right Drag release
-	bindsym $alt+s exec xdotool mouseup 3
+	bindsym $alt+d exec xdotool mouseup 3
+
+	# Middle Drag release
+	bindsym $alt+s exec xdotool mouseup 2
 
 	# return to normal keybindings -- IMPORTANT!!
 
 	bindsym Escape mode "default"
+	bindsym q mode "default"
 }
 
 bindsym $alt+m mode "mouse"
