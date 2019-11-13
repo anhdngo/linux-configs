@@ -24,10 +24,29 @@ alias ws="cd ~/workspace"
 alias cws="cd ~/catkin_ws"
 alias gws="cd ~/go/src/github.com"
 alias tuas="cd ~/tuas"
+alias cf="cd ~/.linux_configs"
+
+# Johnny Decimal System
+export JDFS=$HOME/jdfs
+
+# echoes expanded jd directory
+ejd() { echo $JDFS/*/*/${1}* }
+# cd into jd directory, or home jd dir if no arg
+cjd() { 
+    if [ ! -z "$1" ]
+    then
+        if [[ "$1" == *.* ]]
+            then cd $JDFS/*/*/${1}*
+            else cd $JDFS/*/${1}*
+        fi
+    else cd $JDFS
+    fi
+}
+cjds() { cd $JDFS/*/${1}* }
+mjd() { mv ${1} $JDFS/*/*/${2}* }
+cpjd() { cp -r ${1} $JDFS/*/*/${2}* }
+alias chd=cjd
 
 # App Shortcuts
 alias vpn="/opt/cisco/anyconnect/bin/vpn connect vpn.ucsd.edu"
 alias vpnd="/opt/cisco/anyconnect/bin/vpn disconnect vpn.ucsd.edu"
-
-# Cheatsheets
-alias i3cheatsheet='grep '^bind' .config/i3/config | cut -d " " -f 2- | column | less'
