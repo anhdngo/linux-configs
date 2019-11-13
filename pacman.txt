@@ -8,29 +8,22 @@ wget
 scrot
 pinta
 
-# Development
-make
-git
-python3
-python3-pip
-openjdk-8-jdk
-
 # Terminal
 zsh
 tmux
 fonts-powerline
 terminator
 
-chromium-browser
+chromium
 
 # Vim
 vim
-silversearcher-ag
+the_silver_searcher
 
 # i3
 i3
 feh
-xbacklight
+#xbacklight
 compton
 ranger
 ffmpeg
@@ -45,6 +38,6 @@ lolcat
 
 # Visual
 fonts-dejavu
-fonts-powerline
+powerline-fonts
 fonts-font-awesome
 fonts-octicons

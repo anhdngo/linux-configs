@@ -111,7 +111,6 @@ fortune | cowsay -f ~/.linux_configs/assets/snail.cow | lolcat
 # added by travis gem
 [ -f /home/anhdngo/.travis/travis.sh ] && source /home/anhdngo/.travis/travis.sh
 
-source $HOME/.cargo/env
 
 export PATH=$PATH:$HOME/ardupilot/Tools/autotest
 export PATH=/usr/lib/ccache:$PATH
