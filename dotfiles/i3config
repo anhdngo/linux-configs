@@ -319,7 +319,7 @@ bindsym $alt+r mode "resize"
 # }}}
 
 # Browser Mode {{{
-set $browser chromium-browser
+set $browser $BROWSER
 
 set $browser_mode "(i) incognito, (m) messenger"
 

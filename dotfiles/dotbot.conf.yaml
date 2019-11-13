@@ -28,6 +28,8 @@
         path: Xresources
     ~/.gitconfig:
         path: gitconfig
+    ~/.profile:
+        path: profile
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
