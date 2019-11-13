@@ -20,7 +20,7 @@ alias dl="cd ~/Downloads"
 alias doc="cd ~/Documents"
 alias ws="cd ~/workspace"
 alias cws="cd ~/catkin_ws"
-alias gws="cd ~/go"
+alias gws="cd ~/go/src/github.com"
 alias tuas="cd ~/tuas"
 
 # App Shortcuts

@@ -120,3 +120,8 @@ export PATH=/opt/gcc-arm-none-eabi-6-2017-q2-update/bin:$PATH
 export PATH=/home/anhdngo/tuas/ardupilot/Tools/autotest:$PATH
 
 export XENVIRONMENT="${HOME}/.Xresources"
+
+export GOPATH=~/go
+
+export PATH=$PATH:$HOME/tuas/ardupilot/Tools/autotest
+export PATH=/usr/lib/ccache:$PATH
