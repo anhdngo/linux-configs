@@ -5,5 +5,11 @@
 	editor = vim
 [alias]
     cane = commit --amend --no-edit
-    lo = log --oneline
+    l = log --oneline
     s = status
+    a = add .
+    c = commit -m
+    co = checkout
+    po = push origin
+    pu = pull origin
+    d = diff

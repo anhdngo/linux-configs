@@ -6,6 +6,7 @@ alias rl="exec $SHELL -l"
 alias :q=exit
 alias c=clear
 alias vi=vim
+alias g=git
 
 alias emacs="emacs -nw"
 

@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -98,6 +98,7 @@ source ~/.aliases
 
 # Source go environment
 export PATH=/home/anhdngo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin || echo "Failed to source golang environment"
+export GOPATH=~/go
 
 # Source pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -106,21 +107,12 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
 
-fortune | cowsay -f ~/.linux_configs/assets/snail.cow | lolcat
+# Source travis ci
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
-# added by travis gem
-[ -f /home/anhdngo/.travis/travis.sh ] && source /home/anhdngo/.travis/travis.sh
-
-
-export PATH=$PATH:$HOME/ardupilot/Tools/autotest
-export PATH=/usr/lib/ccache:$PATH
-
-export PATH=/opt/gcc-arm-none-eabi-6-2017-q2-update/bin:$PATH
-export PATH=/home/anhdngo/tuas/ardupilot/Tools/autotest:$PATH
-
-export XENVIRONMENT="${HOME}/.Xresources"
-
-export GOPATH=~/go
-
+# Source ardupilot
+export PATH=$PATH:/usr/lib/ccache
+export PATH=$PATH:/opt/gcc-arm-none-eabi-6-2017-q2-update/bin
 export PATH=$PATH:$HOME/tuas/ardupilot/Tools/autotest
-export PATH=/usr/lib/ccache:$PATH
+
+fortune | cowsay -f ~/.linux_configs/assets/snail.cow | lolcat
