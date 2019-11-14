@@ -42,6 +42,7 @@ vlc
 cowsay
 fortune-mod
 lolcat
+tree
 
 # Visual
 fonts-dejavu

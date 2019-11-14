@@ -31,6 +31,7 @@ export JDFS=$HOME/jdfs
 
 # echoes expanded jd directory
 ejd() { echo $JDFS/*/*/${1}* }
+ejd() { echo $JDFS/*/*/${1}* }
 # cd into jd directory, or home jd dir if no arg
 cjd() { 
     if [ ! -z "$1" ]
@@ -42,9 +43,20 @@ cjd() {
     else cd $JDFS
     fi
 }
+#lists expanded jd directory
+ljd() {
+    if [ ! -z "$1" ]
+    then
+        if [[ "$1" == *.* ]]
+            then tree $JDFS/*/*/${1}* -L 1
+            else tree $JDFS/*/${1}* -L 1
+        fi
+    else tree $JDFS -L 2
+    fi
+}
 cjds() { cd $JDFS/*/${1}* }
-mjd() { mv ${1} $JDFS/*/*/${2}* }
-cpjd() { cp -r ${1} $JDFS/*/*/${2}* }
+mjd() { mv ${1} -t $JDFS/*/*/${2}* }
+cpjd() { cp -r ${1} -t $JDFS/*/*/${2}* }
 alias chd=cjd
 
 # App Shortcuts
