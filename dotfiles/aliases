@@ -65,7 +65,7 @@ ljdfunc() {
         2) # 2 arg: cd
             if [[ "$2" == *.* ]]
             then tree ${1}/*/*/${2}* -L 1
-            else tree ${1}/*/${2}* -L 2
+            else tree ${1}/*/${2}* -L 1
             fi
             ;;
         *) # 3 arg: error
@@ -76,6 +76,53 @@ ljdfunc() {
 # misc mv and cp commands
 mvjdfunc() { mv ${@:2:-1} -t ${1}/*/*/${@:$# }* }
 cpjdfunc() { cp ${@:2:-1} -t ${1}/*/*/${@:$# }* }
+
+# Shorter 2-level Johnny Decimal
+sejdfunc() { echo ${1}/*/${2}* }
+# cd into jd directory, or home jd dir if no arg
+scjdfunc() { 
+     case "$#" in
+        0) # 0 arg: error
+            echo "JD filesystem not defined"
+            ;;
+        1) # 1 arg: cd root
+            cd ${1}
+            ;;
+        2) # 2 arg: cd
+            if [[ "$2" == *.* ]]
+            then cd ${1}/*/${2}*
+            else cd ${1}/${2}*
+            fi
+            ;;
+        *) # 3 arg: error
+            echo "Multiple directories matched"
+            ;;
+    esac
+}
+#lists expanded jd directory
+sljdfunc() {
+    case "$#" in
+        0) # 0 arg: error
+            echo "JD filesystem not defined"
+            ;;
+        1) # 1 arg: cd root
+            tree ${1} -L 2
+            ;;
+        2) # 2 arg: cd
+            if [[ "$2" == *.* ]]
+            then tree ${1}/*/${2}* -L 1
+            else tree ${1}/${2}* -L 1
+            fi
+            ;;
+        *) # 3 arg: error
+            echo "Multiple directories matched"
+            ;;
+    esac
+}
+# misc mv and cp commands
+smvjdfunc() { mv ${@:2:-1} -t ${1}/*/${@:$# }* }
+scpjdfunc() { cp ${@:2:-1} -t ${1}/*/${@:$# }* }
+
 
 # }}}
 
@@ -89,10 +136,10 @@ alias mvjd="mvjdfunc $JDFS"
 alias cpjd="cpjdfunc $JDFS"
 
 # workspace
-alias cws="cjdfunc $WS"
-alias lws="ljdfunc $WS"
-alias mvws="mvjdfunc $WS"
-alias cpws="cpjdfunc $WS"
+alias cws="scjdfunc $WS"
+alias lws="sljdfunc $WS"
+alias mvws="smvjdfunc $WS"
+alias cpws="scpjdfunc $WS"
 # }}}
 
 # App Shortcuts
