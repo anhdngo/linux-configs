@@ -27,6 +27,10 @@ alias tuas="cd ~/tuas"
 alias cf="cd ~/.linux_configs"
 alias ws="cd $WS"
 
+# Prompt Command
+precmd() { eval "$PROMPT_COMMAND" }
+export PROMPT_COMMAND="pwd > /tmp/whereami"
+
 # Johnny Decimal System {{{
 ejdfunc() { echo ${1}/*/*/${2}* }
 # cd into jd directory, or home jd dir if no arg
