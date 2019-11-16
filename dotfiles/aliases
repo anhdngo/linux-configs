@@ -1,3 +1,7 @@
+# Environment Variables
+export WS=$HOME/workspace
+export JDFS=$HOME/pCloudDrive/jdfs
+
 # Ease of Use
 alias sl="ls"
 alias l="ls"
@@ -7,8 +11,6 @@ alias :q=exit
 alias c=clear
 alias vi=vim
 alias g=git
-
-alias emacs="emacs -nw"
 
 # Open File/Application, Detach from Terminal
 xdg() { nohup xdg-open $1 >/dev/null 2>&1  & }
@@ -20,33 +22,77 @@ alias rt="cd /"
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
 alias doc="cd ~/Documents"
-alias ws="cd ~/workspace"
-alias cws="cd ~/catkin_ws"
 alias gws="cd ~/go/src/github.com"
 alias tuas="cd ~/tuas"
 alias cf="cd ~/.linux_configs"
+alias ws="cd $WS"
 
-# Johnny Decimal System
-export JDFS=$HOME/jdfs
-
-# echoes expanded jd directory
-ejd() { echo $JDFS/*/*/${1}* }
+# Johnny Decimal System {{{
+ejdfunc() { echo ${1}/*/*/${2}* }
 # cd into jd directory, or home jd dir if no arg
-cjd() { 
-    if [ ! -z "$1" ]
-    then
-        if [[ "$1" == *.* ]]
-            then cd $JDFS/*/*/${1}*
-            else cd $JDFS/*/${1}*
-        fi
-    else cd $JDFS
-    fi
+cjdfunc() { 
+     case "$#" in
+        0) # 0 arg: error
+            echo "JD filesystem not defined"
+            ;;
+        1) # 1 arg: cd root
+            cd ${1}
+            ;;
+        2) # 2 arg: cd
+            if [[ "$2" == *.* ]]
+            then cd ${1}/*/*/${2}*
+            else cd ${1}/*/${2}*
+            fi
+            ;;
+        *) # 3 arg: error
+            echo "Multiple directories matched"
+            ;;
+    esac
 }
-cjds() { cd $JDFS/*/${1}* }
-mjd() { mv ${1} $JDFS/*/*/${2}* }
-cpjd() { cp -r ${1} $JDFS/*/*/${2}* }
-alias chd=cjd
+#lists expanded jd directory
+ljdfunc() {
+    case "$#" in
+        0) # 0 arg: error
+            echo "JD filesystem not defined"
+            ;;
+        1) # 1 arg: cd root
+            tree ${1} -L 2
+            ;;
+        2) # 2 arg: cd
+            if [[ "$2" == *.* ]]
+            then tree ${1}/*/*/${2}* -L 1
+            else tree ${1}/*/${2}* -L 2
+            fi
+            ;;
+        *) # 3 arg: error
+            echo "Multiple directories matched"
+            ;;
+    esac
+}
+# misc mv and cp commands
+mvjdfunc() { mv ${@:2:-1} -t ${1}/*/*/${@:$# }* }
+cpjdfunc() { cp ${@:2:-1} -t ${1}/*/*/${@:$# }* }
+
+# }}}
+
+# Johnny Decimal System - sub-filesystems {{{
+# cd into jd directory, or home jd dir if no arg
+
+# pcloud
+alias cjd="cjdfunc $JDFS"
+alias ljd="ljdfunc $JDFS"
+alias mvjd="mvjdfunc $JDFS"
+alias cpjd="cpjdfunc $JDFS"
+
+# workspace
+alias cws="cjdfunc $WS"
+alias lws="ljdfunc $WS"
+alias mvws="mvjdfunc $WS"
+alias cpws="cpjdfunc $WS"
+# }}}
 
 # App Shortcuts
 alias vpn="/opt/cisco/anyconnect/bin/vpn connect vpn.ucsd.edu"
 alias vpnd="/opt/cisco/anyconnect/bin/vpn disconnect vpn.ucsd.edu"
+
+# vim:foldmethod=marker:foldlevel=0

@@ -23,3 +23,8 @@ ohmyzsh:
 pathogen:
 	mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+.PHONY: symlinks
+symlinks:
+	ln -s $(JDFS)/10-19-workspace ~/workspace
+	ln -s $(JDFS)/10-19-workspace/11-orgs/11.00-tuas ~/tuas
