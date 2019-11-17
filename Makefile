@@ -24,6 +24,12 @@ pathogen:
 	mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
+.PHONY: vim-plugins
+vim-plugins: pathogen
+    git clone https://github.com/vim-airline/vim-airline.git ~/.vim/bundle
+    git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle
+    git clone https://github.com/vimwiki/vimwiki.git ~/.vim/bundle
+
 .PHONY: symlinks
 symlinks:
 	ln -s $(JDFS)/10-19-workspace ~/workspace

@@ -50,6 +50,8 @@ elif [ -x "$(which chromium)" ]; then
 elif [ -x "$(which firefox)" ]; then
     export BROWSER2=$(which firefox)
 fi
+
+export VIMWIKI=$HOME/vimwiki/
 # }}}
 
 # vim:foldmethod=marker:foldlevel=0

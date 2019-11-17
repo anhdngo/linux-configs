@@ -86,6 +86,15 @@ call pathogen#infect()                      " use pathogen
 " call pathogen#runtime_append_all_bundles()  " use pathogen
 " }}}
 
+" Vimwiki {{{
+" vimwiki/vimwiki
+set nocompatible
+filetype plugin on
+syntax on
+
+let g:vimwiki_list = [{'path': '$VIMWIKI', 'syntax': 'markdown', 'ext': '.md'}]
+" }}}
+
 " CUSTOM FUNCTIONS {{{
 
 " Tmux
