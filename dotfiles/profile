@@ -41,11 +41,14 @@ fi
 # Environment Variables {{{
 export EDITOR=$(which vim)
 export TERMINAL=$(which terminator)
+export BROWSER=/opt/qutebrowser*/qutebrowser.py
 
 if [ -x "$(which chromium-browser)" ]; then
-    export BROWSER=$(which chromium-browser)
+    export BROWSER2=$(which chromium-browser)
 elif [ -x "$(which chromium)" ]; then
-    export BROWSER=$(which chromium)
+    export BROWSER2=$(which chromium)
+elif [ -x "$(which firefox)" ]; then
+    export BROWSER2=$(which firefox)
 fi
 # }}}
 
