@@ -336,6 +336,9 @@ bar {
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
     font pango:DejaVu Sans Mono 8
 }
+
+bindsym $win+b bar mode hide; bar hidden_state hide
+bindsym $win+Shift+b bar mode dock; bar hidden_state show
 # }}}
 
 # Hardware Buttons Control {{{
