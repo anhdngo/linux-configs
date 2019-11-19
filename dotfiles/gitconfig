@@ -10,6 +10,7 @@
     a = add .
     c = commit -m
     co = checkout
+    cob = checkout -b
     po = push origin
     pu = pull origin
     d = diff

@@ -4,6 +4,7 @@
 set $linux_configs $HOME/.linux_configs
 set $browser $BROWSER
 set $browser2 $BROWSER2
+set $pictures $HOME/Pictures/assets
 
 # BINDING STANDARDS:
 # mod is used for manipulating windows within one workspace
@@ -279,7 +280,7 @@ bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #set $Locker $linux_configs/assets/lock.sh
 set $Locker $HOME/.linux_configs/assets/lock.sh
 
-set $mode_system "System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown"
+set $mode_system "System (l) lock, (e) logout, (s) suspend, (t) troll suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown"
 mode $mode_system {
     bindsym l exec --no-startup-id $Locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
@@ -289,7 +290,7 @@ mode $mode_system {
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # troll mode
-    bindsym t exec --no-startup-id i3lock -p win -i $(find $linux_configs/assets/windows -name "*.png" | shuf -n1), mode "default"
+    bindsym t exec --no-startup-id i3lock -p win -i $(find $pictures/windows -name "*.png" | shuf -n1), mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -374,7 +375,7 @@ bindsym --release $alt+$win+p exec scrot -e 'xclip -selection c -t image/png < $
 
 # Wallpaper and Compositing {{{
 # Desktop Wallpaper
-exec_always feh --bg-scale --randomize $linux_configs/wallpapers/*
+exec_always feh --bg-scale --randomize $pictures/wallpapers/*
 
 # Compton: Xorg compositor 
 exec compton
