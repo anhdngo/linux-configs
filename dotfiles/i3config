@@ -34,13 +34,15 @@ font pango:DejaVu Sans Mono 8
 # }}}
 
 # Application Hotkeys {{{
-bindsym $alt+Control+t exec i3-sensible-terminal
-bindsym $alt+Control+Return exec zsh $linux_configs/assets/i3_shell.sh
-bindsym $alt+Control+Shift+t exec i3-sensible-terminal -e tmux
 
-bindsym $alt+Control+r exec calibre
-bindsym $alt+Control+s exec spotify
-bindsym $alt+Control+g exec /opt/$(ls /opt | grep Godot | head -n 1)
+# open terminal
+bindsym $alt+Control+t exec i3-sensible-terminal -e tmux
+bindsym $alt+Control+Return exec zsh $linux_configs/assets/i3_shell.sh
+
+bindsym $alt+Control+Shift+t exec i3-sensible-terminal
+bindsym $alt+Control+Shift+Return exec zsh $linux_configs/assets/i3_shell.sh
+
+bindsym $alt+Control+r exec $EBOOKS
 
 # q=quit -> kill window
 bindsym Control+q kill

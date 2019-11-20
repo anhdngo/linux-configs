@@ -95,6 +95,16 @@ syntax on
 let g:vimwiki_list = [{'path': '$VIMWIKI', 'syntax': 'markdown', 'ext': '.md'}]
 " }}}
 
+" Plugins {{{
+
+" lightline
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+
+" }}}
+
 " CUSTOM FUNCTIONS {{{
 
 " Tmux

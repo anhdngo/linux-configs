@@ -52,6 +52,8 @@ elif [ -x "$(which firefox)" ]; then
 fi
 
 export VIMWIKI=$HOME/vimwiki/
+export EBOOKS=$(which calibre)
+export GODOT=/opt/Godot*
 # }}}
 
 # vim:foldmethod=marker:foldlevel=0
