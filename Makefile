@@ -26,9 +26,10 @@ pathogen:
 
 .PHONY: vim-plugins
 vim-plugins: pathogen
-    git clone https://github.com/vim-airline/vim-airline.git ~/.vim/bundle
-    git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle
-    git clone https://github.com/vimwiki/vimwiki.git ~/.vim/bundle
+	git clone https://github.com/itchyny/lightline.vim.git ~/.vim/bundle/lightline.vim
+	git clone https://github.com/terryma/vim-smooth-scroll.git ~/.vim/bundle/vim-smooth-scroll
+	git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
+	git clone https://github.com/vimwiki/vimwiki.git ~/.vim/bundle/vimwiki
 
 .PHONY: symlinks
 symlinks:
