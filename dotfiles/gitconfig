@@ -12,5 +12,6 @@
     co = checkout
     cob = checkout -b
     po = push origin
+    pfo = push -f origin
     pu = pull origin
     d = diff

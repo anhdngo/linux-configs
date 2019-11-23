@@ -49,7 +49,7 @@ noremap E $
 nnoremap gV `[v`]
 
 " jj to exit insert mode 
-inoremap jj <Esc>" binds jj to Esc  
+" inoremap jj <Esc>" binds jj to Esc  
 " }}}
 
 " Programming {{{
@@ -135,6 +135,10 @@ endfunc
 
 " Ctrl+n to toggle numbers
 nnoremap <C-n> :call ToggleNumber()<CR>
+" }}}
+
+" Clipboard {{{
+set clipboard=unnamedplus
 " }}}
 
 set modeline

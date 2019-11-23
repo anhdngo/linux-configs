@@ -45,6 +45,7 @@ lolcat
 tree
 figlet
 toilet
+rofi
 
 # Visual
 fonts-dejavu

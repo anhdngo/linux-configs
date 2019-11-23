@@ -35,3 +35,7 @@ vim-plugins: pathogen
 symlinks:
 	ln -s $(JDFS)/10-19-workspace ~/workspace
 	ln -s $(JDFS)/10-19-workspace/11-orgs/11.00-tuas ~/tuas
+
+.PHONY: qute-plugins
+qute-plugins:
+	curl https://raw.githubusercontent.com/qutebrowser/qutebrowser/master/misc/userscripts/qute-lastpass > ~/.local/share/qutebrowser/userscripts/qute-lastpass

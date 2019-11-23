@@ -4,6 +4,7 @@
 set $linux_configs $HOME/.linux_configs
 set $browser $BROWSER
 set $browser2 $BROWSER2
+set $ebooks $EBOOKS
 set $pictures $HOME/Pictures/assets
 
 # BINDING STANDARDS:
@@ -37,12 +38,12 @@ font pango:DejaVu Sans Mono 8
 
 # open terminal
 bindsym $alt+Control+t exec i3-sensible-terminal -e tmux
-bindsym $alt+Control+Return exec zsh $linux_configs/assets/i3_shell.sh
+bindsym $alt+Control+Return exec zsh $linux_configs/assets/i3_shell_tmux.sh
 
 bindsym $alt+Control+Shift+t exec i3-sensible-terminal
 bindsym $alt+Control+Shift+Return exec zsh $linux_configs/assets/i3_shell.sh
 
-bindsym $alt+Control+r exec $EBOOKS
+bindsym $alt+Control+r exec $ebooks
 
 # q=quit -> kill window
 bindsym Control+q kill
@@ -292,7 +293,7 @@ mode $mode_system {
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # troll mode
-    bindsym t exec --no-startup-id i3lock -p win -i $(find $pictures/windows -name "*.png" | shuf -n1), mode "default"
+    bindsym t exec --no-startup-id i3lock -p win -u -i $(find $pictures/troll -name "*.png" | shuf -n1), mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

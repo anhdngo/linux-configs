@@ -36,6 +36,8 @@ cowsay
 fortune-mod
 lolcat
 tree
+python-pyqtwebengine
+rofi
 
 # Visual
 fonts-dejavu
