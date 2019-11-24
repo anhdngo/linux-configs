@@ -38,4 +38,7 @@ symlinks:
 
 .PHONY: qute-plugins
 qute-plugins:
+	mkdir -p ~/.local/share/qutebrowser/userscripts
 	curl https://raw.githubusercontent.com/qutebrowser/qutebrowser/master/misc/userscripts/qute-lastpass > ~/.local/share/qutebrowser/userscripts/qute-lastpass
+	chmod +x ~/.local/share/qutebrowser/userscripts/*
+	sudo python3 -m pip install tldextract

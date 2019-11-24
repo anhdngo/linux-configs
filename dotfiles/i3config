@@ -394,6 +394,6 @@ for_window [class="^.*"] border pixel 2
 
 exec --no-startup-id nm-applet
 exec --no-startup-id /opt/pcloud
-exec --no-startup-id /opt/syncthing
+exec --no-startup-id /opt/syncthing -no-browser
 
 # vim:foldmethod=marker:foldlevel=0

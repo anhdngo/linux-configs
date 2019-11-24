@@ -19,3 +19,6 @@ make dotbot
 ```
 make apt
 ```
+
+### Side Notes
+To set lightdm background, copy wallpaper to `/usr/share/backgrounds`, edit /etc/lightdm/\*-greeter.conf to use wallpaper, and set user-wallpaper=false

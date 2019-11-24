@@ -38,6 +38,7 @@ lolcat
 tree
 python-pyqtwebengine
 rofi
+lastpass-cli
 
 # Visual
 fonts-dejavu
