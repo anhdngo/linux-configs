@@ -115,4 +115,4 @@ export PATH=$PATH:/usr/lib/ccache
 export PATH=$PATH:/opt/gcc-arm-none-eabi-6-2017-q2-update/bin
 export PATH=$PATH:$HOME/tuas/ardupilot/Tools/autotest
 
-fortune | cowsay -f ~/.linux_configs/assets/snail.cow | lolcat
+fortune | cowsay -f $CONFIG/assets/snail.cow | lolcat

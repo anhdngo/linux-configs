@@ -1,10 +1,19 @@
-.PHONY: apt
-apt:
-	sudo apt install $(grep -vE "^\s*#" apt.txt | tr "\n" " ")
+.PHONY: common
+common: dotbot ohmyzsh pathogen vim-plugins qute-plugins
+
+.PHONY: manjaro
+manjaro: pacman common
+
+.PHONY: xubuntu
+xubuntu: apt common
 
 .PHONY: pacman
 pacman:
-	sudo pacman -S $(grep -vE "^\s*#" pacman.txt | tr "\n" " ")
+	sudo pacman -S $(shell grep -vE "^\s*#" ./pacman.txt | tr "\n" " ")
+
+.PHONY: apt
+apt:
+	sudo apt install $(shell grep -vE "^\s*#" apt.txt | tr "\n" " ")
 
 .PHONY: dotbot
 dotbot:

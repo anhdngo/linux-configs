@@ -1,4 +1,4 @@
-# aptessentials.txt
+# pacman.txt
 # Contains basic apt programs to install
 
 # Utils
@@ -7,13 +7,16 @@ curl
 wget
 scrot
 pinta
+neofetch
+syncthing
 
 # Terminal
 zsh
 tmux
-fonts-powerline
 terminator
 
+# Browser
+qutebrowser
 chromium
 
 # Vim
@@ -21,7 +24,6 @@ vim
 the_silver_searcher
 
 # i3
-i3
 feh
 #xbacklight
 compton
@@ -41,7 +43,7 @@ rofi
 lastpass-cli
 
 # Visual
-fonts-dejavu
-powerline-fonts
-fonts-font-awesome
-fonts-octicons
+# fonts-dejavu
+# powerline-fonts
+# fonts-font-awesome
+# fonts-octicons
