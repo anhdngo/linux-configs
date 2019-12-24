@@ -238,6 +238,17 @@ bindsym $win+8 workspace $ws8
 bindsym $win+9 workspace $ws9
 bindsym $win+0 workspace $ws10
 
+bindsym $alt+1 workspace $ws1
+bindsym $alt+2 workspace $ws2
+bindsym $alt+3 workspace $ws3
+bindsym $alt+4 workspace $ws4
+bindsym $alt+5 workspace $ws5
+bindsym $alt+6 workspace $ws6
+bindsym $alt+7 workspace $ws7
+bindsym $alt+8 workspace $ws8
+bindsym $alt+9 workspace $ws9
+bindsym $alt+0 workspace $ws10
+
 # switch workspace using left and right
 bindsym $win+Left workspace prev
 bindsym $win+Right workspace next
@@ -259,6 +270,17 @@ bindsym $win+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $win+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $win+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $win+Shift+0 move container to workspace $ws10; workspace $ws10
+
+bindsym $alt+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $alt+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $alt+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $alt+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $alt+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $alt+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $alt+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $alt+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $alt+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $alt+Shift+0 move container to workspace $ws10; workspace $ws10
 
 # move focused container to next/prev workspace
 bindsym $win+Shift+Left move container to workspace prev; workspace prev
@@ -341,8 +363,8 @@ bar {
     font pango:DejaVu Sans Mono 8
 }
 
-bindsym $win+b bar mode hide; bar hidden_state hide
-bindsym $win+Shift+b bar mode dock; bar hidden_state show
+bindsym $alt+b bar mode hide; bar hidden_state hide
+bindsym $alt+Shift+b bar mode dock; bar hidden_state show
 # }}}
 
 # Hardware Buttons Control {{{
