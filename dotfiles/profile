@@ -39,9 +39,15 @@ fi
 # }}}
 
 # Environment Variables {{{
+export CONFIG=$HOME/.linux-configs
 export EDITOR=$(which vim)
 export TERMINAL=$(which terminator)
-export BROWSER=/opt/qutebrowser*/qutebrowser.py
+
+if [ -x "$(which qutebrowser)" ]; then
+    export BROWSER=$(which qutebrowser)
+else
+    export BROWSER=/opt/qutebrowser*/qutebrowser.py
+fi
 
 if [ -x "$(which chromium-browser)" ]; then
     export BROWSER2=$(which chromium-browser)
@@ -54,6 +60,7 @@ fi
 export VIMWIKI=$HOME/vimwiki/
 export EBOOKS=/usr/bin/calibre
 export GODOT=/opt/Godot*
+export PICTURES=$HOME/Pictures/assets
 
 export LPASS_AGENT_TIMEOUT=0
 # }}}

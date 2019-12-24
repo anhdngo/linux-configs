@@ -1,11 +1,11 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 
-set $linux_configs $HOME/.linux_configs
+set $linux_configs $CONFIG
 set $browser $BROWSER
 set $browser2 $BROWSER2
 set $ebooks $EBOOKS
-set $pictures $HOME/Pictures/assets
+set $pictures $PICTURES
 
 # BINDING STANDARDS:
 # mod is used for manipulating windows within one workspace
@@ -417,5 +417,6 @@ for_window [class="^.*"] border pixel 2
 exec --no-startup-id nm-applet
 exec --no-startup-id /opt/pcloud
 exec --no-startup-id /opt/syncthing -no-browser
+exec --no-startup-id syncthing -no-browser
 
 # vim:foldmethod=marker:foldlevel=0

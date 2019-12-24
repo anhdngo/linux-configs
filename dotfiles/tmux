@@ -34,7 +34,7 @@ set -g status-fg white
 
 # Pane Navigation {{{
 # split panes using | -
-bind \ split-window -h
+bind \\ split-window -h
 bind - split-window -v
 
 # unbind the default pane splits
