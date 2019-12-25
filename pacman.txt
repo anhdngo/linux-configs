@@ -9,6 +9,8 @@ scrot
 pinta
 neofetch
 syncthing
+pulseaudio
+thunar
 
 # Terminal
 zsh
@@ -25,7 +27,7 @@ the_silver_searcher
 
 # i3
 feh
-#xbacklight
+xorg-xbacklight
 compton
 ranger
 ffmpeg

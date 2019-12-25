@@ -16,6 +16,9 @@ set -g mouse on
 # Set prefix key
 set -g prefix C-a
 
+# C-a a to send a to terminal
+bind-key a send-prefix
+
 # Reload config file
 bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 

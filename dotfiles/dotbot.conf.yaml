@@ -30,6 +30,8 @@
         path: gitconfig
     ~/.profile:
         path: profile
+    ~/.config/qutebrowser/config.py:
+        path: qutebrowser
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

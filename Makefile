@@ -1,5 +1,5 @@
 .PHONY: common
-common: dotbot ohmyzsh pathogen vim-plugins qute-plugins
+common: ohmyzsh dotbot pathogen vim-plugins qute-plugins
 
 .PHONY: manjaro
 manjaro: pacman common
@@ -26,7 +26,9 @@ i3gaps:
 
 .PHONY: ohmyzsh
 ohmyzsh:
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh > /tmp/ohmyzsh.sh
+	chmod +x /tmp/ohmyzsh.sh
+	sh -c /tmp/ohmyzsh.sh
 
 .PHONY: pathogen
 pathogen:

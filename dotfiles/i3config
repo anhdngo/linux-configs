@@ -121,7 +121,7 @@ bindsym $alt+space focus mode_toggle
 bindsym $alt+a focus parent
 
 # focus the child container
-#bindsym $alt+d focus child
+bindsym $alt+d focus child
 # }}}
 
 # Mouse Navigation {{{
@@ -303,7 +303,7 @@ bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # mode to suspend/shutdown computer
 # set $Locker i3lock -i $linux_configs/wallpapers/wallpaper.png && sleep 1
 #set $Locker $linux_configs/assets/lock.sh
-set $Locker $HOME/.linux_configs/assets/lock.sh
+set $Locker $CONFIG/assets/lock.sh
 
 set $mode_system "System (l) lock, (e) logout, (s) suspend, (t) troll suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown"
 mode $mode_system {
@@ -374,8 +374,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Screen Brightness Controls (requires xbacklight)
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -416,7 +416,9 @@ for_window [class="^.*"] border pixel 2
 
 exec --no-startup-id nm-applet
 exec --no-startup-id /opt/pcloud
+exec --no-startup-id pcloud
 exec --no-startup-id /opt/syncthing -no-browser
 exec --no-startup-id syncthing -no-browser
+exec --no-startup-id pulseaudio
 
 # vim:foldmethod=marker:foldlevel=0

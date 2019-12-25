@@ -60,7 +60,7 @@ fi
 export VIMWIKI=$HOME/vimwiki/
 export EBOOKS=/usr/bin/calibre
 export GODOT=/opt/Godot*
-export PICTURES=$HOME/Pictures/assets
+export PICTURES=$HOME/assets
 
 export LPASS_AGENT_TIMEOUT=0
 # }}}
