@@ -41,7 +41,7 @@ vim-plugins: pathogen
 	git clone https://github.com/terryma/vim-smooth-scroll.git ~/.vim/bundle/vim-smooth-scroll
 	git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 	git clone https://github.com/vimwiki/vimwiki.git ~/.vim/bundle/vimwiki
-
+	git clone https://github.com/masukomi/vim-markdown-folding
 .PHONY: symlinks
 symlinks:
 	ln -s $(JDFS)/10-19-workspace ~/workspace

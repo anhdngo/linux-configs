@@ -28,8 +28,8 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " Folding {{{
 set foldenable          " enable folding
-set foldlevelstart=10   " open most folds by default
-set foldmethod=indent   " fold based on indent level
+set foldlevelstart=0    " close most folds by default
+set foldmethod=syntax   " fold option
 
 " space to toggle fold
 nnoremap <space> za
@@ -93,6 +93,14 @@ filetype plugin on
 syntax on
 
 let g:vimwiki_list = [{'path': '$VIMWIKI', 'syntax': 'markdown', 'ext': '.md'}]
+
+" vimwiki will not affect files outside wikihome
+let g:vimwiki_global_ext = 0
+
+" let vimwiki use markdown style folding
+let g:vimwiki_folding = 'custom'
+
+" let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 " }}}
 
 " Plugins {{{
