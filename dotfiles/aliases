@@ -28,6 +28,7 @@ alias gws="cd ~/go/src/github.com"
 alias tuas="cd ~/tuas"
 alias cf=$CONFIG
 alias ws="cd $WS"
+alias vwd="cd $VIMWIKI"
 
 # Prompt Command
 precmd() { eval "$PROMPT_COMMAND" }

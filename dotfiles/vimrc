@@ -101,6 +101,9 @@ let g:vimwiki_global_ext = 0
 let g:vimwiki_folding = 'custom'
 
 " let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+
+" vimwiki generate template
+au BufNewFile $VIMWIKI/diary/*.md :silent 0r !$CONFIG/assets/vimwiki-diary-template.py '%'
 " }}}
 
 " Plugins {{{
