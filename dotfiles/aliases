@@ -13,8 +13,8 @@ alias vi=vim
 alias g=git
 
 # Open File/Application, Detach from Terminal
-xdg() { nohup xdg-open $1 >/dev/null 2>&1  & }
-run() { nohup $1 >/dev/null 2>&1 & }
+xdg() { nohup xdg-open $1 >/dev/null 2>&1  &; disown }
+run() { nohup $1 >/dev/null 2>&1 &; disown }
 
 # Directory Shortcuts
 alias h="cd ~"
