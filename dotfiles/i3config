@@ -369,13 +369,20 @@ bindsym $alt+Shift+b bar mode dock; bar hidden_state show
 
 # Hardware Buttons Control {{{
 # Volume Control (requires pulseaudio and alsa-utils)
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+# pulseaudio
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5%
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# alsa
+bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
+bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
+bindsym XF86AudioMute exec "amixer set Master toggle"
 
 # Screen Brightness Controls (requires xbacklight)
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 5; notify-send -t 500 $(xbacklight)"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 5; notify-send -t 500 $(xbacklight)"
+
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -421,4 +428,10 @@ exec --no-startup-id /opt/syncthing -no-browser
 exec --no-startup-id syncthing -no-browser
 exec --no-startup-id pulseaudio
 
+# Manjaro apps
+exec --no-startup-id volumeicon
+bindsym $alt+Ctrl+m exec terminal -e 'alsamixer'
+
+#exec --no-startup-id start_conky_maia
+#
 # vim:foldmethod=marker:foldlevel=0
