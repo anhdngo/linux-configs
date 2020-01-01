@@ -94,25 +94,18 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.aliases
-
-# Source go environment
-export PATH=/home/anhdngo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin || echo "Failed to source golang environment"
-export GOPATH=~/go
-
-# Source pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
+if [ -f ~/.aliases ];
+then
+    source ~/.aliases
 fi
 
-# Source travis ci
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+# Source programs to shell
+if [ -f ~/.sourcerc ];
+then
+    source ~/.sourcerc
+fi
 
-# Source ardupilot
-export PATH=$PATH:/usr/lib/ccache
-export PATH=$PATH:/opt/gcc-arm-none-eabi-6-2017-q2-update/bin
-export PATH=$PATH:$HOME/tuas/ardupilot/Tools/autotest
+# Remove weird % partial line symbol on terminal open
+unsetopt prompt_cr prompt_sp
 
-fortune | cowsay -f $CONFIG/assets/snail.cow | lolcat
+#fortune -os | cowsay -f $CONFIG/assets/snail.cow | lolcat

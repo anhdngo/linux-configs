@@ -12,8 +12,6 @@ alias c=clear
 alias vi=vim
 alias g=git
 
-alias vw="vim $VIMWIKI/index.md"
-
 # Open File/Application, Detach from Terminal
 xdg() { nohup xdg-open $1 >/dev/null 2>&1  & }
 run() { nohup $1 >/dev/null 2>&1 & }
@@ -28,7 +26,13 @@ alias gws="cd ~/go/src/github.com"
 alias tuas="cd ~/tuas"
 alias cf=$CONFIG
 alias ws="cd $WS"
-alias vwd="cd $VIMWIKI"
+
+# Vimwiki Shortcuts
+alias vws="cd $VIMWIKI"
+alias vw="vim $VIMWIKI/index.md"
+alias vwd="vim -c :VimwikiMakeDiaryNote"
+alias vwt="vim -c :VimwikiMakeTomorrowDiaryNote"
+alias vwy="vim -c :VimwikiMakeYesterdayDiaryNote"
 
 # Prompt Command
 precmd() { eval "$PROMPT_COMMAND" }
