@@ -16,6 +16,7 @@ thunar
 zsh
 tmux
 terminator
+guake
 
 # Browser
 qutebrowser

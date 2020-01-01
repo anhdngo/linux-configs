@@ -35,3 +35,4 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [dconf load /apps/guake/ < guake.ini, Loading guake settings]
