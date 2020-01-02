@@ -33,6 +33,7 @@ alias vw="vim $VIMWIKI/index.md"
 alias vwd="vim -c :VimwikiMakeDiaryNote"
 alias vwt="vim -c :VimwikiMakeTomorrowDiaryNote"
 alias vwy="vim -c :VimwikiMakeYesterdayDiaryNote"
+alias vwi="vim $VIMWIKI/diary/diary.md -c :VimwikiDiaryGenerateLinks"
 
 # Prompt Command
 precmd() { eval "$PROMPT_COMMAND" }

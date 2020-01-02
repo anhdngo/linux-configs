@@ -289,9 +289,33 @@ bindsym $win+Shift+h move container to workspace prev; workspace prev
 bindsym $win+Shift+l move container to workspace next; workspace next
 # }}}
 
-# Scratchpad and Dropdown {{{
+# Window Defaults {{{
+# Assign apps to default workspaces
+# Use xprop to get class
+#assign [class="class"] $ws#
+#for_window [class="class"] move to workspace $ws#
 
-# Dropdown window
+# Conky window
+set $conky "Conky"
+for_window [instance=$conky] floating enable
+for_window [instance=$conky] resize set 400 410
+for_window [instance=$conky] border pixel 5
+bindsym Control+$alt+c exec conky
+
+# Mixer window
+set $mixer "alsamixer"
+for_window [title=$mixer] floating enable
+for_window [title=$mixer] resize set 1000 600
+for_window [title=$mixer] border pixel 5
+bindsym Control+$alt+m exec terminator -e 'alsamixer' -T $mixer
+# }}}
+
+# Scratchpad and Dropdown {{{
+#
+bindsym Control+$alt+p scratchpad show; move position center
+#bindsym Control+$alt+i move scratchpad
+
+# Dropdown
 # set $dropdown "dropdown"
 # for_window [title=$dropdown] floating enable
 # for_window [title=$dropdown] resize set 625 400
@@ -300,18 +324,37 @@ bindsym $win+Shift+l move container to workspace next; workspace next
 # exec --no-startup-id terminator -T $dropdown -e tmux
 # bindsym F9 [title=$dropdown] scratchpad show; [title=$dropdown] move position center
 
-# Math window
+# Math
 # set $math "math"
 # for_window [title=$math] floating enable
 # for_window [title=$math] resize set 800 300
 # for_window [title=$math] move scratchpad
 # for_window [title=$math] border pixel 5
 # exec --no-startup-id terminator -T $math -e python
-
 # bindsym F10 [title=$math] scratchpad show; [title=$math] move position center
 
-# bindsym $alt+p scratchpad show
-# bindsym $alt+i move scratchpad
+# Spotify
+set $spotify "spotify"
+for_window [instance=$spotify] floating enable
+for_window [instance=$spotify] resize set 1600 800
+for_window [instance=$spotify] move scratchpad
+for_window [instance=$spotify] border pixel 5
+bindsym Control+$alt+s [instance=$spotify] scratchpad show; [instance=$spotify] move position center
+
+# OBS
+set $obs "obs"
+for_window [instance=$obs] floating enable
+for_window [instance=$obs] move scratchpad
+for_window [instance=$obs] border pixel 5
+bindsym Control+$alt+o [instance=$obs] scratchpad show; [instance=$obs] move position center
+
+# Torrent
+set $torrent "deluge"
+for_window [instance=$torrent] floating enable
+for_window [instance=$torrent] resize set 1600 800
+for_window [instance=$torrent] move scratchpad
+for_window [instance=$torrent] border pixel 5
+bindsym Control+$alt+d [instance=$torrent] scratchpad show; [instance=$torrent] move position center
 
 # }}}
 
@@ -406,8 +449,8 @@ bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
 bindsym XF86AudioMute exec "amixer set Master toggle"
 
 # Screen Brightness Controls (requires xbacklight)
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 5; notify-send -t 500 $(xbacklight)"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 5; notify-send -t 500 $(xbacklight)"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 3; notify-send -t 500 $(xbacklight)"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 3; notify-send -t 500 $(xbacklight)"
 
 
 # Media player controls
@@ -422,13 +465,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym --release $alt+p exec scrot -u -e 'xclip -selection c -t image/png < $f'
 bindsym --release $alt+Shift+p exec scrot -s -e 'xclip -selection c -t image/png < $f'
 bindsym --release $alt+$win+p exec scrot -e 'xclip -selection c -t image/png < $f'
-# }}}
-
-# Default Workspaces {{{
-# Assign apps to default workspaces
-# Use xprop to get class
-#assign [class="class"] $ws#
-#for_window [class="class"] move to workspace $ws#
 # }}}
 
 # Wallpaper and Compositing {{{
@@ -457,7 +493,6 @@ exec --no-startup-id "guake --no-startup-script"
 
 # Manjaro apps
 exec --no-startup-id volumeicon
-bindsym $alt+Ctrl+m exec terminal -e 'alsamixer'
 
 #exec --no-startup-id start_conky_maia
 #

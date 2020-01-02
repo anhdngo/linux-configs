@@ -28,7 +28,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " Folding {{{
 set foldenable          " enable folding
-set foldlevelstart=1    " close most folds by default
+set foldlevelstart=100    " close most folds by default
 set foldmethod=syntax   " fold option
 
 " space to toggle fold
