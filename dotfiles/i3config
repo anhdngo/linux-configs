@@ -213,7 +213,7 @@ bindsym $alt+m mode "mouse"
 
 # }}}
 
-# Workspace Navigation{{{
+# Workspace Navigation {{{
 # set workspace names
 set $ws1 "1"
 set $ws2 "2"
@@ -287,6 +287,32 @@ bindsym $win+Shift+Left move container to workspace prev; workspace prev
 bindsym $win+Shift+Right move container to workspace next; workspace next
 bindsym $win+Shift+h move container to workspace prev; workspace prev
 bindsym $win+Shift+l move container to workspace next; workspace next
+# }}}
+
+# Scratchpad and Dropdown {{{
+
+# Dropdown window
+# set $dropdown "dropdown"
+# for_window [title=$dropdown] floating enable
+# for_window [title=$dropdown] resize set 625 400
+# for_window [title=$dropdown] move scratchpad
+# for_window [title=$dropdown] border pixel 5
+# exec --no-startup-id terminator -T $dropdown -e tmux
+# bindsym F9 [title=$dropdown] scratchpad show; [title=$dropdown] move position center
+
+# Math window
+# set $math "math"
+# for_window [title=$math] floating enable
+# for_window [title=$math] resize set 800 300
+# for_window [title=$math] move scratchpad
+# for_window [title=$math] border pixel 5
+# exec --no-startup-id terminator -T $math -e python
+
+# bindsym F10 [title=$math] scratchpad show; [title=$math] move position center
+
+# bindsym $alt+p scratchpad show
+# bindsym $alt+i move scratchpad
+
 # }}}
 
 # Reload i3{{{
