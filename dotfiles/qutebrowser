@@ -23,3 +23,9 @@ config.bind('W', 'spawn --userscript qute-lastpass')
 
 # Enable smooth scrolling
 c.scrolling.smooth = True
+
+# Disable notifications
+config.set('content.notifications', False)
+
+# Always enable pdf.js
+config.set('content.pdfjs', True)
