@@ -9,9 +9,17 @@ template = """# {date}
 
 * [ ] Wake Up Before 9am
 * [ ] Meditate 10min
-* [ ] Read 1hr
+* [ ] Read 1hr -> Book(s): [ ]
+* [ ] Deep work 1hr -> Project(s): [ ]
+* [ ] Write Blog Post
 
-## Todo
+* [ ] DO NOT Watch Youtube
+* [ ] DO NOT Check Email Between 9am and 9pm
+
+## Goals For The Day
+* 
+
+## Activity Log
 * [ ]
 
 ## Distractions

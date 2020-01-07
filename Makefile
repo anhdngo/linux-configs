@@ -60,7 +60,7 @@ dconf-dump-guake:
 
 .PHONY: hosts-crontab
 croncmd = "cp $(CONFIG)/assets/hosts /etc/hosts"
-cronjob = "0,30 * * * * $(croncmd)"
+cronjob = "0,15,30,45 * * * * $(croncmd)"
 hosts-crontab:
 	#echo "0,15,30,45 * * * * cp $(CONFIG)/assets/hosts /etc/hosts" > /tmp/cronhosts
 	#sudo crontab /tmp/cronhosts
