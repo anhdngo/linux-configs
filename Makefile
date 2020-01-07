@@ -41,7 +41,7 @@ vim-plugins: pathogen
 	git clone https://github.com/terryma/vim-smooth-scroll.git ~/.vim/bundle/vim-smooth-scroll
 	git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 	git clone https://github.com/vimwiki/vimwiki.git ~/.vim/bundle/vimwiki
-	git clone https://github.com/masukomi/vim-markdown-folding
+	git clone https://github.com/masukomi/vim-markdown-folding ~/.vim/bundle/vim-markdown-folding
 .PHONY: symlinks
 symlinks:
 	ln -s $(JDFS)/10-19-workspace ~/workspace
@@ -57,3 +57,12 @@ qute-plugins:
 .PHONY: dconf-dump-guake
 dconf-dump-guake:
 	dconf dump /apps/guake/ > dotfiles/guake.ini
+
+.PHONY: hosts-crontab
+croncmd = "cp $(CONFIG)/assets/hosts /etc/hosts"
+cronjob = "0,30 * * * * $(croncmd)"
+hosts-crontab:
+	#echo "0,15,30,45 * * * * cp $(CONFIG)/assets/hosts /etc/hosts" > /tmp/cronhosts
+	#sudo crontab /tmp/cronhosts
+	#rm /tmp/cronhosts
+	( sudo crontab -l | grep -v -F $(croncmd) ; echo $(cronjob) ) | sudo crontab -
