@@ -1,0 +1,7 @@
+#!/bin/bash
+CONFIG=/home/anhdngo/.linux-configs
+diff -q /etc/hosts $CONFIG/assets/hosts 1>/dev/null
+if [[ $? != "0" ]]
+then
+    cp $CONFIG/assets/hosts /etc/hosts
+fi

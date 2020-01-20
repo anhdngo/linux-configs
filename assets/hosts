@@ -15,6 +15,22 @@ ff02::2 ip6-allrouters
 127.0.0.1   www.youtube.com
 127.0.0.1   www.youtube.com
 127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
 
 # Media Sites
 127.0.0.1   www.solarmovie.to
@@ -22,6 +38,7 @@ ff02::2 ip6-allrouters
 127.0.0.1   www.123movies.review
 127.0.0.1   www.kisscartoon.info
 127.0.0.1   www.kissanime.ru
+127.0.0.1   www.youtube.com
 
 # Game Sites
 127.0.0.1   www.ldjam.com
@@ -40,3 +57,18 @@ ff02::2 ip6-allrouters
 # 127.0.0.1   www.gmail.com
 # 127.0.0.1   www.outlook.com
 # 127.0.0.1   www.messenger.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com
+127.0.0.1   www.youtube.com

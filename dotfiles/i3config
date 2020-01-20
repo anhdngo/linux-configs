@@ -38,10 +38,10 @@ font pango:DejaVu Sans Mono 8
 
 # open terminal
 bindsym $alt+Control+t exec i3-sensible-terminal -e tmux
-bindsym $alt+Control+Return exec zsh $linux_configs/assets/i3_shell_tmux.sh
+bindsym $alt+Control+Return exec zsh $linux_configs/scripts/i3_shell_tmux.sh
 
 bindsym $alt+Control+Shift+t exec i3-sensible-terminal
-bindsym $alt+Control+Shift+Return exec zsh $linux_configs/assets/i3_shell.sh
+bindsym $alt+Control+Shift+Return exec zsh $linux_configs/scripts/i3_shell.sh
 
 bindsym $alt+Control+r exec $ebooks
 
@@ -371,8 +371,8 @@ bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # mode to suspend/shutdown computer
 # set $Locker i3lock -i $linux_configs/wallpapers/wallpaper.png && sleep 1
-#set $Locker $linux_configs/assets/lock.sh
-set $Locker $CONFIG/assets/lock.sh
+#set $Locker $linux_configs/scripts/lock.sh
+set $Locker $CONFIG/scripts/lock.sh
 
 set $mode_system "System (l) lock, (e) logout, (s) suspend, (t) troll suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown"
 mode $mode_system {

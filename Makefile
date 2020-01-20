@@ -59,10 +59,13 @@ dconf-dump-guake:
 	dconf dump /apps/guake/ > dotfiles/guake.ini
 
 .PHONY: hosts-crontab
-croncmd = "cp $(CONFIG)/assets/hosts /etc/hosts"
-cronjob = "0,15,30,45 * * * * $(croncmd)"
+cronjob = "* * * * * $(CONFIG)/scripts/checkhosts"
 hosts-crontab:
-	#echo "0,15,30,45 * * * * cp $(CONFIG)/assets/hosts /etc/hosts" > /tmp/cronhosts
-	#sudo crontab /tmp/cronhosts
-	#rm /tmp/cronhosts
-	( sudo crontab -l | grep -v -F $(croncmd) ; echo $(cronjob) ) | sudo crontab -
+	( sudo crontab -l 2>/dev/null; echo $(cronjob) ) | sudo crontab -
+
+.PHONY: yay
+yay:
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+	rm -rf ./yay
