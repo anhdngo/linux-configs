@@ -2,9 +2,11 @@
 import sys
 import datetime
 import os
+import subprocess
 
 template = """# {date}
 
+{quote}
 ## Daily checklist
 
 * [ ] Wake Up Before 9am
@@ -30,4 +32,5 @@ template = """# {date}
 date = (datetime.date.today() if len(sys.argv) < 2
                 # Expecting filename in YYYY-MM-DD.foo format
                         else os.path.basename(sys.argv[1]).rsplit(".", 1)[0])
-print(template.format(date=date))
+quote = subprocess.check_output("shuf -n 1 $CONFIG/assets/cowsay.lines", shell=True).decode('utf-8')
+print(template.format(quote=quote, date=date))

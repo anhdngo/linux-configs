@@ -108,4 +108,5 @@ fi
 # Remove weird % partial line symbol on terminal open
 unsetopt prompt_cr prompt_sp
 
-#fortune -os | cowsay -f $CONFIG/assets/snail.cow | lolcat
+echo $(shuf -n 1 $CONFIG/assets/cowsay.lines) | lolcat
+
