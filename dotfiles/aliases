@@ -16,6 +16,9 @@ alias g=git
 xdg() { nohup xdg-open $1 >/dev/null 2>&1  &; disown }
 run() { nohup $1 >/dev/null 2>&1 &; disown }
 
+# Applications
+alias music="mpv --no-audio-display --shuffle --loop-playlist"
+
 # Directory Shortcuts
 alias h="cd ~"
 alias rt="cd /"
