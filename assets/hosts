@@ -1,3 +1,21 @@
+#################################################################################################
+# ▄▄▄▄▄▄       ▄▄     ▄▄▄   ▄▄  ▄▄▄   ▄▄  ▄▄▄▄▄▄▄▄  ▄▄▄▄▄                                       #
+# ██▀▀▀▀██    ████    ███   ██  ███   ██  ██▀▀▀▀▀▀  ██▀▀▀██                                     #
+# ██    ██    ████    ██▀█  ██  ██▀█  ██  ██        ██    ██                                    #
+# ███████    ██  ██   ██ ██ ██  ██ ██ ██  ███████   ██    ██                                    #
+# ██    ██   ██████   ██  █▄██  ██  █▄██  ██        ██    ██                                    #
+# ██▄▄▄▄██  ▄██  ██▄  ██   ███  ██   ███  ██▄▄▄▄▄▄  ██▄▄▄██                                     #
+# ▀▀▀▀▀▀▀   ▀▀    ▀▀  ▀▀   ▀▀▀  ▀▀   ▀▀▀  ▀▀▀▀▀▀▀▀  ▀▀▀▀▀                                       #
+#                                                                                               #
+# ▄▄▄▄    ▄▄▄▄         ▄▄   ▄  ▄▄▄▄ ▄▄▄▄▄▄▄          ▄▄▄  ▄    ▄   ▄▄   ▄▄   ▄   ▄▄▄  ▄▄▄▄▄▄    #
+# █   ▀▄ ▄▀  ▀▄        █▀▄  █ ▄▀  ▀▄   █           ▄▀   ▀ █    █   ██   █▀▄  █ ▄▀   ▀ █         #
+# █    █ █    █        █ █▄ █ █    █   █           █      █▄▄▄▄█  █  █  █ █▄ █ █   ▄▄ █▄▄▄▄▄    #
+# █    █ █    █        █  █ █ █    █   █           █      █    █  █▄▄█  █  █ █ █    █ █         #
+# █▄▄▄▀   █▄▄█         █   ██  █▄▄█    █            ▀▄▄▄▀ █    █ █    █ █   ██  ▀▄▄▄▀ █▄▄▄▄▄    #
+#                                                                                               #
+# DON'T TRUST YOURSELF                                                                          #
+# DON'T RE-ENABLE ANY OF THESE WEBSITES                                                         #
+#################################################################################################
 127.0.0.1	localhost
 
 # The following lines are desirable for IPv6 capable hosts
@@ -7,7 +25,6 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 
-# PERMANENTLY BANNED
 
 # Social Media Sites
 127.0.0.1   www.facebook.com
@@ -22,7 +39,8 @@ ff02::2 ip6-allrouters
 127.0.0.1   www.youtube.com
 127.0.0.1   www.youtube.com
 127.0.0.1   www.youtube.com
-127.0.0.1   www.youtube.com
+127.0.0.1   www.y2mate.com
+127.0.0.1   www.bitdownloader.com
 127.0.0.1   www.youtube.com
 127.0.0.1   www.youtube.com
 127.0.0.1   www.youtube.com
@@ -39,12 +57,16 @@ ff02::2 ip6-allrouters
 127.0.0.1   www.kisscartoon.info
 127.0.0.1   www.kissanime.ru
 127.0.0.1   www.youtube.com
+#127.0.0.1   www.reddit.com
 
 # Game Sites
 127.0.0.1   www.ldjam.com
 127.0.0.1   www.andkon.com
 127.0.0.1   www.armorgames.com
 127.0.0.1   www.kongregate.com
+127.0.0.1   www.proguides.com
+127.0.0.1   www.ssbwiki.com
+127.0.0.1   www.supersmashbros.fandom.com
 
 # Story/Info Sites
 127.0.0.1   www.tvtropes.org
@@ -72,3 +94,8 @@ ff02::2 ip6-allrouters
 127.0.0.1   www.youtube.com
 127.0.0.1   www.youtube.com
 127.0.0.1   www.youtube.com
+                                                                                           
+                                                                                          
+                                                            
+                                                           
+                                                            

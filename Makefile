@@ -7,6 +7,10 @@ manjaro: pacman common
 .PHONY: xubuntu
 xubuntu: apt common
 
+.PHONY: wsl
+wsl:
+
+
 .PHONY: pacman
 pacman:
 	sudo pacman -S $(shell grep -vE "^\s*#" ./pacman.txt | tr "\n" " ")

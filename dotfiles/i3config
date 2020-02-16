@@ -480,7 +480,7 @@ exec compton
 # i3-gaps
 gaps inner 4
 gaps outer 2
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 # }}}
 
 exec --no-startup-id nm-applet
@@ -488,12 +488,11 @@ exec --no-startup-id /opt/pcloud
 exec --no-startup-id pcloud
 exec --no-startup-id /opt/syncthing -no-browser
 exec --no-startup-id syncthing -no-browser
-exec --no-startup-id pulseaudio
+exec --no-startup-id pulseaudio -D
 exec --no-startup-id "guake --no-startup-script"
 
 # Manjaro apps
 exec --no-startup-id volumeicon
 
 #exec --no-startup-id start_conky_maia
-#
-# vim:foldmethod=marker:foldlevel=0
+#vim:foldmethod=marker:foldlevel=0
