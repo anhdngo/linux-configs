@@ -76,12 +76,19 @@ set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
+Plugin 'townk/vim-autoclose'
+" Utility
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ludovicchabant/vim-gutentags'
+" Visual
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+" Programming
 Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
+ " Integrations
+Plugin 'tpope/vim-fugitive'
 Plugin 'vimwiki/vimwiki'
 call vundle#end()
 filetype plugin indent on
@@ -111,10 +118,12 @@ au BufNewFile $VIMWIKI/diary/*.md :silent 0r !$CONFIG/scripts/vimwiki-diary-temp
 " CtrlP
 :let g:ctrlp_match_window = 'bottom,order:ttb'      " ctrlp lists files top to bottom
 :let g:ctrlp_switch_buffer = 0                      " always open new buffer
-:let g:ctrlp_working_path_mode = 0                  " allows working directory change
+:let g:ctrlp_working_path_mode = 'ra'
 :let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " use ag to search
+:let g:ctrlp_custom_ignore = 'node_modules|.git'
 nnoremap <leader>s :CtrlP<CR>
-nnoremap <C-p> :CtrlP<CR>
+nnoremap <C-p><C-p> :CtrlP<CR>
+nnoremap <C-p><C-o> :CtrlPTag<CR>
 " }}}
 
 " Plugins {{{
@@ -127,6 +136,8 @@ let g:lightline = {
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
+" tagbar
+map <C-m> :TagbarToggle<CR>
 
 " syntastic
 set statusline+=%#warningmsg#
@@ -140,6 +151,25 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers=['eslint']
+
+let g:gutentags_ctags_exclude = ["node_modules"]
+" let g:gutentags_cache_dir = '/tmp/gutentags'
+
+" Tag Commands
+" <C-]> - Go to definition
+" <C-T> - Return from definition
+" <C-W><C-]> - Open definition in horizontal split
+
+" Custom Tag Commands
+" Go to definition
+map <C-]><C-]> :exec("tag ".expand("<cword>"))<CR>
+" Open definition in new tab
+map <C-]><C-T> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" <A
+" Open definition in vertical split
+map <C-]>\ :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+" Open definition in horizontal split
+map <C-]>- :sp <CR>:exec("tag ".expand("<cword>"))<CR>
 " }}}
 
 " CUSTOM FUNCTIONS {{{
@@ -171,6 +201,15 @@ endfunc
 " Clipboard {{{
 set clipboard=unnamedplus
 " }}}
+
+" Disable arrow movement, resize splits instead.
+let g:resize_mode = 1
+if get(g:, 'resize_mode')
+	nnoremap <Up>    :resize +2<CR>
+	nnoremap <Down>  :resize -2<CR>
+	nnoremap <Left>  :vertical resize -2<CR>
+	nnoremap <Right> :vertical resize +2<CR>
+endif
 
 set modeline
 set modelines=1
