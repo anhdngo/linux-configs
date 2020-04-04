@@ -10,7 +10,7 @@
 
 # Key Modifications {{{
 setxkbmap -option caps:super
-}}}
+# }}}
 
 # Run Commands {{{
 # if running bash

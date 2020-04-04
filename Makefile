@@ -34,13 +34,8 @@ ohmyzsh:
 	chmod +x /tmp/ohmyzsh.sh
 	sh -c /tmp/ohmyzsh.sh
 
-.PHONY: pathogen
-pathogen:
-	mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
 .PHONY: vim-plugins
-vim-plugins: pathogen
+vim-plugins:
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall +qall
 
