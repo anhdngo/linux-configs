@@ -48,8 +48,6 @@ noremap E $
 " highlight last inserted text
 nnoremap gV `[v`]
 
-" jj to exit insert mode 
-" inoremap jj <Esc>" binds jj to Esc  
 " }}}
 
 " Programming {{{
@@ -71,7 +69,7 @@ set writebackup
 nnoremap <leader>a :Ag
 " }}}
 
-" Vundle {{{
+" Plugins (Vundle) {{{
 set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 call vundle#begin()
@@ -95,7 +93,6 @@ filetype plugin indent on
 " }}}
 
 " Vimwiki {{{
-" vimwiki/vimwiki
 set nocompatible
 filetype plugin on
 syntax on
@@ -108,13 +105,11 @@ let g:vimwiki_global_ext = 0
 " let vimwiki use markdown style folding
 let g:vimwiki_folding = 'custom'
 
-" let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-
 " vimwiki generate template
 au BufNewFile $VIMWIKI/diary/*.md :silent 0r !$CONFIG/scripts/vimwiki-diary-template.py '%'
 " }}}
 
-" Fuzzy Finder{{{
+" Fuzzy Finder (CtrlP) {{{
 " CtrlP
 :let g:ctrlp_match_window = 'bottom,order:ttb'      " ctrlp lists files top to bottom
 :let g:ctrlp_switch_buffer = 0                      " always open new buffer
@@ -126,20 +121,20 @@ nnoremap <C-p><C-p> :CtrlP<CR>
 nnoremap <C-p><C-o> :CtrlPTag<CR>
 " }}}
 
-" Plugins {{{
-
-" lightline
+" Status Bar (Lightline) {{{
 set laststatus=2
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
+" }}}
 
-" nerdtree
+" NERDTree {{{
 map <C-n> :NERDTreeToggle<CR>
-" tagbar
-map <C-m> :TagbarToggle<CR>
+let g:NERDTreeMapOpenSplit = '-'
+let g:NERDTreeMapOpenVSplit = '\'
+" }}}
 
-" syntastic
+" Linting (Syntastic) {{{}
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -148,10 +143,21 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_typescript_checkers=['tslint']
+let g:syntastic_go_checkers = ['go']
+let g:syntastic_java_checkers = ['javac']
 
+noremap <leader><CR> :SyntasticCheck<CR>
+noremap <leader>[ :lprev<CR>
+noremap <leader>] :lnext<CR>
+" }}}
+
+" Tags (Tagbar + Gutentags) {{{
+map <C-m> :TagbarToggle<CR>
 let g:gutentags_ctags_exclude = ["node_modules"]
 " let g:gutentags_cache_dir = '/tmp/gutentags'
 
@@ -193,9 +199,6 @@ function! ToggleNumber()
         set relativenumber
     endif
 endfunc
-
-" Ctrl+n to toggle numbers
-"nnoremap <C-n> :call ToggleNumber()<CR>
 " }}}
 
 " Clipboard {{{
