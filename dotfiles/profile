@@ -8,6 +8,10 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# Key Modifications {{{
+setxkbmap -option caps:super
+}}}
+
 # Run Commands {{{
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -43,18 +47,18 @@ export CONFIG=$HOME/.linux-configs
 export EDITOR=$(which vim)
 export TERMINAL=$(which terminator)
 
-if [ -x "$(which qutebrowser)" ]; then
-    export BROWSER=$(which qutebrowser)
-else
-    export BROWSER=/opt/qutebrowser*/qutebrowser.py
-fi
+# if [ -x "$(which qutebrowser)" ]; then
+#     export BROWSER=$(which qutebrowser)
+# else
+#     export BROWSER=/opt/qutebrowser*/qutebrowser.py
+# fi
 
 if [ -x "$(which chromium-browser)" ]; then
-    export BROWSER2=$(which chromium-browser)
+    export BROWSER=$(which chromium-browser)
 elif [ -x "$(which chromium)" ]; then
-    export BROWSER2=$(which chromium)
+    export BROWSER=$(which chromium)
 elif [ -x "$(which firefox)" ]; then
-    export BROWSER2=$(which firefox)
+    export BROWSER=$(which firefox)
 fi
 
 export VIMWIKI=$HOME/vimwiki/

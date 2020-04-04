@@ -11,6 +11,7 @@ alias :q=exit
 alias c=clear
 alias vi=vim
 alias g=git
+alias ack=ag
 
 # Open File/Application, Detach from Terminal
 xdg() { nohup xdg-open $1 >/dev/null 2>&1  &; disown }

@@ -37,8 +37,9 @@ font pango:DejaVu Sans Mono 8
 # Application Hotkeys {{{
 
 # open terminal
-bindsym $alt+Control+t exec i3-sensible-terminal -e tmux
-bindsym $alt+Control+Return exec zsh $linux_configs/scripts/i3_shell_tmux.sh
+bindsym $alt+Control+t exec i3-sensible-terminal # -e tmux
+bindsym $alt+Control+Return exec zsh $linux_configs/scripts/i3_shell.sh
+#bindsym $alt+Control+Return exec zsh $linux_configs/scripts/i3_shell_tmux.sh
 
 bindsym $alt+Control+Shift+t exec i3-sensible-terminal
 bindsym $alt+Control+Shift+Return exec zsh $linux_configs/scripts/i3_shell.sh
@@ -50,8 +51,8 @@ bindsym Control+q kill
 bindsym Control+BackSpace kill
 bindsym $alt+Control+Backspace kill
 # e=explorer -> open explorer
-bindsym $alt+Control+e exec i3-sensible-terminal -e ranger
-bindsym $alt+Control+Shift+e exec thunar
+#bindsym $alt+Control+Shift+e exec i3-sensible-terminal -e ranger
+bindsym $alt+Control+e exec thunar
 
 # start dmenu (a program launcher)
 bindsym $alt+Control+space exec dmenu_run
@@ -478,9 +479,9 @@ exec compton
 # exec compton --backend glx --glx-fshader-win "$(cat $linux_configs/grayscale.glsl)"
 
 # i3-gaps
-gaps inner 4
-gaps outer 2
-for_window [class="^.*"] border pixel 0
+# gaps inner 4
+# gaps outer 2
+for_window [class="^.*"] border pixel 1
 # }}}
 
 exec --no-startup-id nm-applet
