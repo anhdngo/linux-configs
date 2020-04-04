@@ -13,11 +13,95 @@ set $pictures $PICTURES
 # control+mod is used for opening new applications
 # control+altmod is used for moving windows between workspaces
 
+# Color Themes (Tango) {{{
+
+# $i3-status
+#color_bad = "#CC0000"
+#color_degraded = "#EDD400"
+#color_good = "#73D216"
+
+# $i3-theme-window
+# tango dark
+set $darkblue 		#204A87
+set $darkbrown		#8F5902
+set $darkgreen 		#4E9A06
+set $darkmagenta 	#5C3566
+set $darkred 		#A40000
+set $darkyellow 	#C4A000
+set $darkorange		#CE5C00
+
+# tango light
+set $lightblue 		#729FCF
+set $lightbrown		#E9B96E
+set $lightgreen 	#8AE234
+set $lightmagenta 	#AD7FA8
+set $lightred 		#EF2929
+set $lightyellow 	#FCE94F
+set $lightorange	#FCAF3E
+
+# tango normal
+set $blue 		#3465A4
+set $brown		#C17D11
+set $green 		#73D216
+set $magenta 		#75507B
+set $red 		#CC0000
+set $yellow 		#EDD400
+set $orange		#F57900
+
+# tango mono
+set $black 		#555753
+set $grey		#BABDB6
+set $white 		#EEEEEC
+set $darkblack 		#2E3436
+set $darkgrey 		#888A85
+set $darkwhite 		#D3D7CF
+
+# $i3-background
+exec_always --no-startup-id xsetroot -solid '#000000'
+
+# <clientclass> <border> <backg> <text> <indicator>
+client.focused          $darkorange $darkorange $white $lightblue
+client.focused_inactive $black $black $grey $darkgrey
+client.unfocused        $darkblack $darkblack $grey $darkgrey
+client.urgent           $red $red $white $lightred
+
+# }}}
+
+# i3 Bar {{{ 
+bar {
+    # hide bar and reveal when win key is pressed
+    mode hide
+    hidden_state hide
+    modifier $sup
+    # show status
+    status_command $linux_configs/bumblebee-status/bumblebee-status -m battery date time pasink pasource -p root.path=/ time.format="%I:%M %p" date.format="%a, %b %d %Y" nic.exclude="ham0,docker0,lo" -t greyish-powerline
+    # fonts
+    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    font pango:DejaVu Sans Mono 9
+
+    colors {
+        # <workclass> <border> <backg> <text>
+        focused_workspace 	$darkorange $darkorange $white
+        active_workspace 	$black $black $white
+        inactive_workspace	$darkblack $darkblack $white
+        urgent_workspace 	$red $red $white
+
+        background #000000
+        separator  $darkblack
+        statusline $darkblack
+    }
+
+}
+
+bindsym $alt+b bar mode hide; bar hidden_state hide
+bindsym $alt+Shift+b bar mode dock; bar hidden_state show
+# }}}
+
 # Modkeys {{{
 # Set $alt to Mod1 (alt)
 set $alt Mod1
-# Set $win to Mod4 (windows key)
-set $win Mod4
+# Set $sup to Mod4 (super/windows key)
+set $sup Mod4
 
 # Use Mouse+$alt to drag floating windows to their wanted position
 floating_modifier $alt
@@ -92,12 +176,12 @@ bindsym $alt+Shift+Up move up
 bindsym $alt+Shift+Right move right
 
 # toggle fullscreen for focused window
-bindsym $win+k fullscreen toggle
-bindsym $win+Up fullscreen toggle
+bindsym $sup+k fullscreen toggle
+bindsym $sup+Up fullscreen toggle
 bindsym $alt+f fullscreen toggle
 # toggle floating mode for focused window
-bindsym $win+j floating toggle
-bindsym $win+Down floating toggle
+bindsym $sup+j floating toggle
+bindsym $sup+Down floating toggle
 bindsym $alt+Shift+space floating toggle
 
 # split in vertical orientation
@@ -228,16 +312,16 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $win+1 workspace $ws1
-bindsym $win+2 workspace $ws2
-bindsym $win+3 workspace $ws3
-bindsym $win+4 workspace $ws4
-bindsym $win+5 workspace $ws5
-bindsym $win+6 workspace $ws6
-bindsym $win+7 workspace $ws7
-bindsym $win+8 workspace $ws8
-bindsym $win+9 workspace $ws9
-bindsym $win+0 workspace $ws10
+bindsym $sup+1 workspace $ws1
+bindsym $sup+2 workspace $ws2
+bindsym $sup+3 workspace $ws3
+bindsym $sup+4 workspace $ws4
+bindsym $sup+5 workspace $ws5
+bindsym $sup+6 workspace $ws6
+bindsym $sup+7 workspace $ws7
+bindsym $sup+8 workspace $ws8
+bindsym $sup+9 workspace $ws9
+bindsym $sup+0 workspace $ws10
 
 bindsym $alt+1 workspace $ws1
 bindsym $alt+2 workspace $ws2
@@ -251,43 +335,43 @@ bindsym $alt+9 workspace $ws9
 bindsym $alt+0 workspace $ws10
 
 # switch workspace using left and right
-bindsym $win+Left workspace prev
-bindsym $win+Right workspace next
-bindsym $win+h workspace prev
-bindsym $win+l workspace next
+bindsym $sup+Left workspace prev
+bindsym $sup+Right workspace next
+bindsym $sup+h workspace prev
+bindsym $sup+l workspace next
 
 # enable alt+tab to change focus
-bindsym $win+Tab workspace next
-bindsym $win+Shift+Tab workspace prev
+bindsym $sup+Tab workspace next
+bindsym $sup+Shift+Tab workspace prev
 
 # move focused container to workspace
-bindsym $win+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $win+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $win+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym $win+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $win+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $win+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $win+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $win+Shift+8 move container to workspace $ws8; workspace $ws8
-bindsym $win+Shift+9 move container to workspace $ws9; workspace $ws9
-bindsym $win+Shift+0 move container to workspace $ws10; workspace $ws10
+bindsym $sup+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $sup+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $sup+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $sup+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $sup+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $sup+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $sup+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $sup+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $sup+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $sup+Shift+0 move container to workspace $ws10; workspace $ws10
 
-bindsym $alt+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $alt+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $alt+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym $alt+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $alt+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $alt+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $alt+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $alt+Shift+8 move container to workspace $ws8; workspace $ws8
-bindsym $alt+Shift+9 move container to workspace $ws9; workspace $ws9
-bindsym $alt+Shift+0 move container to workspace $ws10; workspace $ws10
+bindsym $sup+q move container to workspace $ws1; workspace $ws1
+bindsym $sup+w move container to workspace $ws2; workspace $ws2
+bindsym $sup+e move container to workspace $ws3; workspace $ws3
+bindsym $sup+r move container to workspace $ws4; workspace $ws4
+bindsym $sup+t move container to workspace $ws5; workspace $ws5
+bindsym $sup+y move container to workspace $ws6; workspace $ws6
+bindsym $sup+u move container to workspace $ws7; workspace $ws7
+bindsym $sup+i move container to workspace $ws8; workspace $ws8
+bindsym $sup+o move container to workspace $ws9; workspace $ws9
+bindsym $sup+p move container to workspace $ws10; workspace $ws10
 
 # move focused container to next/prev workspace
-bindsym $win+Shift+Left move container to workspace prev; workspace prev
-bindsym $win+Shift+Right move container to workspace next; workspace next
-bindsym $win+Shift+h move container to workspace prev; workspace prev
-bindsym $win+Shift+l move container to workspace next; workspace next
+bindsym $sup+Shift+Left move container to workspace prev; workspace prev
+bindsym $sup+Shift+Right move container to workspace next; workspace next
+bindsym $sup+Shift+h move container to workspace prev; workspace prev
+bindsym $sup+Shift+l move container to workspace next; workspace next
 # }}}
 
 # Window Defaults {{{
@@ -313,7 +397,7 @@ bindsym Control+$alt+m exec terminator -e 'alsamixer' -T $mixer
 
 # Scratchpad and Dropdown {{{
 #
-bindsym Control+$alt+p scratchpad show; move position center
+#bindsym Control+$alt+p scratchpad show; move position center
 #bindsym Control+$alt+i move scratchpad
 
 # Dropdown
@@ -356,6 +440,14 @@ for_window [instance=$torrent] resize set 1600 800
 for_window [instance=$torrent] move scratchpad
 for_window [instance=$torrent] border pixel 5
 bindsym Control+$alt+d [instance=$torrent] scratchpad show; [instance=$torrent] move position center
+
+# Audio
+set $pavucontrol "pavucontrol"
+for_window [instance=$pavucontrol] floating enable
+for_window [instance=$pavucontrol] resize set 1600 800
+for_window [instance=$pavucontrol] move scratchpad
+for_window [instance=$pavucontrol] border pixel 5
+bindsym Control+$alt+p exec pavucontrol; [instance=$pavucontrol] scratchpad show; [instance=$pavucontrol] move position center
 
 # }}}
 
@@ -420,23 +512,6 @@ mode "resize" {
 bindsym $alt+r mode "resize"
 # }}}
 
-# i3 Bar {{{ 
-bar {
-    # hide bar and reveal when win key is pressed
-    mode hide
-    hidden_state hide
-    modifier $win
-    # show status
-    status_command $linux_configs/bumblebee-status/bumblebee-status -m battery date time pasink pasource -p root.path=/ time.format="%I:%M %p" date.format="%a, %b %d %Y" nic.exclude="ham0,docker0,lo" -t greyish-powerline
-    # fonts
-    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    font pango:DejaVu Sans Mono 8
-}
-
-bindsym $alt+b bar mode hide; bar hidden_state hide
-bindsym $alt+Shift+b bar mode dock; bar hidden_state show
-# }}}
-
 # Hardware Buttons Control {{{
 # Volume Control (requires pulseaudio and alsa-utils)
 # pulseaudio
@@ -465,7 +540,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Takes screenshot with scrot, then uses xclip to save that to clipboard
 bindsym --release $alt+p exec scrot -u -e 'xclip -selection c -t image/png < $f'
 bindsym --release $alt+Shift+p exec scrot -s -e 'xclip -selection c -t image/png < $f'
-bindsym --release $alt+$win+p exec scrot -e 'xclip -selection c -t image/png < $f'
+bindsym --release $alt+$sup+p exec scrot -e 'xclip -selection c -t image/png < $f'
 # }}}
 
 # Wallpaper and Compositing {{{
@@ -489,11 +564,11 @@ exec --no-startup-id /opt/pcloud
 exec --no-startup-id pcloud
 exec --no-startup-id /opt/syncthing -no-browser
 exec --no-startup-id syncthing -no-browser
-exec --no-startup-id pulseaudio -D
+#exec --no-startup-id pulseaudio -D
 exec --no-startup-id "guake --no-startup-script"
 
 # Manjaro apps
 exec --no-startup-id volumeicon
 
 #exec --no-startup-id start_conky_maia
-#vim:foldmethod=marker:foldlevel=0
+# vim:foldmethod=marker:foldlevel=0
