@@ -12,6 +12,8 @@
         path: tmux
     ~/.vimrc:
         path: vimrc
+    ~/.config/nvim/init.vim:
+        path: init.vim
     ~/.aliases:
         path: aliases
     ~/.config/i3/config:
@@ -32,6 +34,8 @@
         path: profile
     ~/.config/qutebrowser/config.py:
         path: qutebrowser
+    ~/.config/mpb/mpv.conf:
+        path: mpv.conf
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

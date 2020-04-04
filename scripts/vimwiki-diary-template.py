@@ -9,6 +9,7 @@ template = """# {date}
 {quote}
 ## Daily checklist
 
+* [ ] Block Distracting Websites
 * [ ] Wake Up Before 9am
 * [ ] Meditate 10min
 * [ ] Read 1hr -> Book(s): [ ]
@@ -19,7 +20,7 @@ template = """# {date}
 * [ ] DO NOT Check Email Between 9am and 9pm
 
 ## Goals For The Day
-* 
+* [ ] 
 
 ## Activity Log
 * 
