@@ -1,0 +1,8 @@
+aseprite
+brother-hll2320d
+godot
+logmein-hamachi
+nerd-fonts-dejavu-complete
+pcloud-drive
+retroarch-git
+woeusb

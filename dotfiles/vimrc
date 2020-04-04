@@ -88,6 +88,7 @@ Plugin 'valloric/youcompleteme'
  " Integrations
 Plugin 'tpope/vim-fugitive'
 Plugin 'vimwiki/vimwiki'
+Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 filetype plugin indent on
 " }}}
@@ -119,6 +120,12 @@ au BufNewFile $VIMWIKI/diary/*.md :silent 0r !$CONFIG/scripts/vimwiki-diary-temp
 nnoremap <leader>s :CtrlP<CR>
 nnoremap <C-p><C-p> :CtrlP<CR>
 nnoremap <C-p><C-o> :CtrlPTag<CR>
+
+" ctrl+shift+\ or - to open horizontal or vertical split
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("h")': ['<c-x>', '<c-\>'],
+    \ 'AcceptSelection("v")': ['<c-v>', '<c-_>'],
+    \}
 " }}}
 
 " Status Bar (Lightline) {{{
