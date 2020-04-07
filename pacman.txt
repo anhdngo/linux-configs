@@ -17,6 +17,7 @@ thunar
 zsh
 tmux
 terminator
+rxvt-unicode
 guake
 
 # Browser

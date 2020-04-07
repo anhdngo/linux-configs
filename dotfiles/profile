@@ -45,7 +45,7 @@ fi
 # Environment Variables {{{
 export CONFIG=$HOME/.linux-configs
 export EDITOR=$(which vim)
-export TERMINAL=$(which terminator)
+export TERMINAL=$(which urxvt)
 
 # if [ -x "$(which qutebrowser)" ]; then
 #     export BROWSER=$(which qutebrowser)
