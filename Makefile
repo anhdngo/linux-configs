@@ -66,3 +66,7 @@ yay:
 	cd yay
 	makepkg -si
 	rm -rf ./yay
+
+.PHONY: gitignore-global
+gitignore-global:
+	git config --global core.excludesfile $(shell pwd)/dotfiles/gitignore_global
