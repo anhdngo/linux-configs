@@ -392,11 +392,11 @@ bindsym $sup+Shift+l move container to workspace next; workspace next
 #for_window [class="class"] move to workspace $ws#
 
 # Conky window
-set $conky "Conky"
-for_window [instance=$conky] floating enable
-for_window [instance=$conky] resize set 400 410
-for_window [instance=$conky] border pixel 5
-bindsym Control+$alt+c exec conky
+# set $conky "Conky"
+# for_window [instance=$conky] floating enable
+# for_window [instance=$conky] resize set 400 410
+# for_window [instance=$conky] border pixel 5
+# bindsym Control+$alt+c exec conky
 
 # Mixer window
 # set $mixer "alsamixer"
