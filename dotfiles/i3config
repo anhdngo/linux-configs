@@ -56,11 +56,15 @@ set $darkblack 		#2E3436
 set $darkgrey 		#888A85
 set $darkwhite 		#D3D7CF
 
+# highlight theme select
+set $accent     #7AE0C0
+set $text       #555753
+
 # $i3-background
 exec_always --no-startup-id xsetroot -solid '#000000'
 
 # <clientclass> <border> <backg> <text> <indicator>
-client.focused          $darkorange $darkorange $white $lightblue
+client.focused          $accent $accent $white $lightblue
 client.focused_inactive $black $black $grey $darkgrey
 client.unfocused        $darkblack $darkblack $grey $darkgrey
 client.urgent           $red $red $white $lightred
@@ -81,8 +85,8 @@ bar {
 
     colors {
         # <workclass> <border> <backg> <text>
-        focused_workspace 	$darkorange $darkorange $white
-        active_workspace 	$black $black $white
+        focused_workspace 	$accent $accent $text
+        active_workspace 	$accent $accent $text
         inactive_workspace	$darkblack $darkblack $white
         urgent_workspace 	$red $red $white
 
@@ -144,6 +148,13 @@ bindsym $alt+Control+space exec dmenu_run
 # browser
 bindsym $alt+Control+b exec $browser
 bindsym $alt+Control+Shift+b exec $browser2
+
+# slack
+bindsym $alt+Control+s exec slack
+
+# mail
+bindsym $alt+Control+m exec mailspring
+
 # }}}
 
 # Focus Navigation {{{
@@ -300,16 +311,16 @@ bindsym $alt+m mode "mouse"
 
 # Workspace Navigation {{{
 # set workspace names
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 " 1 "
+set $ws2 " 2 "
+set $ws3 " 3 "
+set $ws4 " 4 "
+set $ws5 " 5 "
+set $ws6 " 6 "
+set $ws7 " 7 "
+set $ws8 " 8 "
+set $ws9 " 9 "
+set $ws10 " 10 "
 
 # switch to workspace
 bindsym $sup+1 workspace $ws1
@@ -388,11 +399,11 @@ for_window [instance=$conky] border pixel 5
 bindsym Control+$alt+c exec conky
 
 # Mixer window
-set $mixer "alsamixer"
-for_window [title=$mixer] floating enable
-for_window [title=$mixer] resize set 1000 600
-for_window [title=$mixer] border pixel 5
-bindsym Control+$alt+m exec terminator -e 'alsamixer' -T $mixer
+# set $mixer "alsamixer"
+# for_window [title=$mixer] floating enable
+# for_window [title=$mixer] resize set 1000 600
+# for_window [title=$mixer] border pixel 5
+# bindsym Control+$alt+m exec terminator -e 'alsamixer' -T $mixer
 # }}}
 
 # Scratchpad and Dropdown {{{
@@ -419,12 +430,12 @@ bindsym Control+$alt+m exec terminator -e 'alsamixer' -T $mixer
 # bindsym F10 [title=$math] scratchpad show; [title=$math] move position center
 
 # Spotify
-set $spotify "spotify"
-for_window [instance=$spotify] floating enable
-for_window [instance=$spotify] resize set 1600 800
-for_window [instance=$spotify] move scratchpad
-for_window [instance=$spotify] border pixel 5
-bindsym Control+$alt+s [instance=$spotify] scratchpad show; [instance=$spotify] move position center
+# set $spotify "spotify"
+# for_window [instance=$spotify] floating enable
+# for_window [instance=$spotify] resize set 1600 800
+# for_window [instance=$spotify] move scratchpad
+# for_window [instance=$spotify] border pixel 5
+# bindsym Control+$alt+s [instance=$spotify] scratchpad show; [instance=$spotify] move position center
 
 # OBS
 set $obs "obs"
@@ -545,10 +556,10 @@ bindsym --release $alt+$sup+p exec scrot -e 'xclip -selection c -t image/png < $
 
 # Wallpaper and Compositing {{{
 # Desktop Wallpaper
-exec_always feh --bg-scale --randomize $pictures/wallpapers/*
+exec_always --no-startup-id feh --bg-scale --randomize $pictures/wallpapers/*
 
 # Compton: Xorg compositor 
-exec compton
+exec --no-startup-id compton
 
 # Set Grayscale
 # exec compton --backend glx --glx-fshader-win "$(cat $linux_configs/grayscale.glsl)"

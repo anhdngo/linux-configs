@@ -108,5 +108,5 @@ fi
 # Remove weird % partial line symbol on terminal open
 unsetopt prompt_cr prompt_sp
 
-echo $(shuf -n 1 $VIMWIKI/quotes.md) | lolcat
+#echo $(shuf -n 1 $VIMWIKI/quotes.md) | lolcat
 #source $CONFIG/scripts/checklist.sh
