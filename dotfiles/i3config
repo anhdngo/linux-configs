@@ -26,59 +26,27 @@ floating_modifier $alt
 
 # Color Themes (Tango) {{{
 
-# $i3-status
-#color_bad = "#CC0000"
-#color_degraded = "#EDD400"
-#color_good = "#73D216"
-
 # $i3-theme-window
 # tango dark
-set_from_resource $darkblue     color4 		#204A87
-set_from_resource $darkbrown    color       #8F5902
-set_from_resource $darkgreen    color2 		#4E9A06
-set_from_resource $darkmagenta  color5 	    #5C3566
-set_from_resource $darkred      color1 		#A40000
-set_from_resource $darkyellow   color3      #C4A000
-set_from_resource $darkorange	color       #CE5C00
+set_from_resource $primary      primary     #CE5C00
+set_from_resource $secondary    secondary   #204A87
 
-# tango light
-set_from_resource $lightblue    color12     #729FCF
-set_from_resource $lightbrown   color       #E9B96E
-set_from_resource $lightgreen   color10     #8AE234
-set_from_resource $lightmagenta color13     #AD7FA8
-set_from_resource $lightred 	color9      #EF2929
-set_from_resource $lightyellow 	color11     #FCE94F
-set_from_resource $lightorange	color       #FCAF3E
+set_from_resource $darktext     darkblack      #555753
+set_from_resource $lighttext    white      #EEEEEC
+set_from_resource $darkbg       darkblack      #2E3436
+set_from_resource $lightbg      darkwhite      #BABDB6
 
-# tango normal
-set_from_resource $blue 		color       #3465A4
-set_from_resource $brown		color       #C17D11
-set_from_resource $green 		color       #73D216
-set_from_resource $magenta 		color       #75507B
-set_from_resource $red 		    color       #CC0000
-set_from_resource $yellow 		color       #EDD400
-set_from_resource $orange		color       #F57900
+set_from_resource $warning      red      #CC0000
 
-# tango mono
-set_from_resource $black 		color       #555753
-set_from_resource $grey		    color       #BABDB6
-set_from_resource $white 		color       #EEEEEC
-set_from_resource $darkblack 	color       #2E3436
-set_from_resource $darkgrey 	color       #888A85
-set_from_resource $darkwhite 	color       #D3D7CF
-
-# highlight theme select
-set $accent     #7AE0C0
-set $text       #555753
 
 # $i3-background
 exec_always --no-startup-id xsetroot -solid '#000000'
 
 # <clientclass> <border> <backg> <text> <indicator>
-client.focused          $accent $accent $white $lightblue
-client.focused_inactive $black $black $grey $darkgrey
-client.unfocused        $darkblack $darkblack $grey $darkgrey
-client.urgent           $red $red $white $lightred
+client.focused          $primary $primary $lighttext $secondary
+client.focused_inactive $darkbg  $darkbg  $lighttext $darkbg
+client.unfocused        $darkbg  $darkbg  $lighttext $darkbg
+client.urgent           $warning $warning $lighttext $warning
 
 # }}}
 
@@ -96,10 +64,10 @@ bar {
 
     colors {
         # <workclass> <border> <backg> <text>
-        focused_workspace 	$accent $accent $text
-        active_workspace 	$accent $accent $text
-        inactive_workspace	$darkblack $darkblack $white
-        urgent_workspace 	$red $red $white
+        focused_workspace 	$primary $primary $lighttext
+        active_workspace 	$darkbg $darkbg   $lighttext
+        inactive_workspace	$darkbg $darkbg   $lighttext
+        urgent_workspace 	$warning $warning $lighttext
 
         background #000000
         separator  $darkblack

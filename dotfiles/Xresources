@@ -30,6 +30,51 @@ URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 ! Tango color palette
+! tango dark
+#define darkblue     #204A87
+#define darkbrown    #8F5902
+#define darkgreen    #4E9A06
+#define darkmagenta  #5C3566
+#define darkred      #A40000
+#define darkyellow   #C4A000
+#define darkorange	 #CE5C00
+
+! tango light
+#define lightblue    #729FCF
+#define lightbrown   #E9B96E
+#define lightgreen   #8AE234
+#define lightmagenta #AD7FA8
+#define lightred     #EF2929
+#define lightyellow  #FCE94F
+#define lightorange	 #FCAF3E
+
+! tango normal
+#define blue        #3465A4
+#define brown       #C17D11
+#define green 	   	#73D216
+#define magenta 	#75507B
+#define red 		#CC0000
+#define yellow 		#EDD400
+#define orange		#F57900
+
+! tango mono
+#define black 		#555753
+#define grey		#BABDB6
+#define white 		#EEEEEC
+#define darkblack 	#2E3436
+#define darkgrey 	#888A85
+#define darkwhite 	#D3D7CF
+
+! i3 variables
+*primary: darkorange
+*secondary: darkblue
+*black: black
+*darkblack: darkblack
+*white: white
+*darkwhite: darkwhite
+*red: red
+
+
 ! URxvt*background:         #2e3436
 URxvt*depth: 32
 URxvt*background: rgba:0000/0000/0200/c800
