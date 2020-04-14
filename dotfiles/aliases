@@ -43,6 +43,23 @@ alias vwi="vim $VIMWIKI/diary/diary.md -c :VimwikiDiaryGenerateLinks"
 precmd() { eval "$PROMPT_COMMAND" }
 export PROMPT_COMMAND="pwd > /tmp/whereami"
 
+cwsfunc() {
+    case "$#" in
+        0) # 0 arg: error
+            echo "Workspace not defined"
+            ;;
+        1) # 1 arg: cd ws
+            cd ${1}
+            ;;
+        2) # 2 arg: cd
+            cd ${1}/${2}*
+            ;;
+        3)
+            echo "Multiple directories matched"
+            ;;
+    esac
+}
+
 # Johnny Decimal System {{{
 ejdfunc() { echo ${1}/*/*/${2}* }
 # cd into jd directory, or home jd dir if no arg
@@ -148,7 +165,7 @@ alias mvjd="mvjdfunc $JDFS"
 alias cpjd="cpjdfunc $JDFS"
 
 # workspace
-alias cws="scjdfunc $WS"
+alias cws="cwsfunc $WS"
 alias lws="sljdfunc $WS"
 alias mvws="smvjdfunc $WS"
 alias cpws="scpjdfunc $WS"
