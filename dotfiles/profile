@@ -61,10 +61,11 @@ elif [ -x "$(which firefox)" ]; then
     export BROWSER=$(which firefox)
 fi
 
-export VIMWIKI=$HOME/vimwiki/
 export EBOOKS=/usr/bin/calibre
-export GODOT=/opt/Godot*
-export PICTURES=$HOME/assets
+
+export SYNC=$HOME/sync
+export VIMWIKI=$SYNC/vimwiki/
+export PICTURES=$SYNC/assets
 
 export LPASS_AGENT_TIMEOUT=0
 # }}}

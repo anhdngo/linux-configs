@@ -26,10 +26,9 @@ alias rt="cd /"
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
 alias doc="cd ~/Documents"
-alias gws="cd ~/go/src/github.com"
-alias tuas="cd ~/tuas"
 alias cf=$CONFIG
 alias ws="cd $WS"
+alias sync="cd $SYNC"
 
 # Vimwiki Shortcuts
 alias vws="cd $VIMWIKI"

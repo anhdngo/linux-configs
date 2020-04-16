@@ -188,95 +188,6 @@ bindsym $alt+a focus parent
 bindsym $alt+d focus child
 # }}}
 
-# Mouse Navigation {{{
-
-mode "mouse" {
-
-	# set your three speeds here
-
-	set $slow 10
-	set $quick 100
-	set $fast 500
-
-	# Mouse movement (slow/fine-tuned) -- vim keybindings
-
-	bindsym h exec xdotool mousemove_relative -- -$slow 0
-	bindsym j exec xdotool mousemove_relative 0 $slow
-	bindsym k exec xdotool mousemove_relative -- 0 -$slow
-	bindsym l exec xdotool mousemove_relative $slow 0
-
-	# Mouse movement (slow/fine-tuned) -- arrow keys
-
-	bindsym Left exec xdotool mousemove_relative -- -$slow 0
-	bindsym Down exec xdotool mousemove_relative 0 $slow
-	bindsym Up exec xdotool mousemove_relative -- 0 -$slow
-	bindsym Right exec xdotool mousemove_relative $slow 0
-
-	# Mouse movement (quicker) -- vim keybindings
-
-	bindsym Shift+h exec xdotool mousemove_relative -- -$quick 0
-	bindsym Shift+j exec xdotool mousemove_relative 0 $quick
-	bindsym Shift+k exec xdotool mousemove_relative -- 0 -$quick
-	bindsym Shift+l exec xdotool mousemove_relative $quick 0
-
-	# Mouse movement (quicker) -- arrow keys
-
-	bindsym Shift+Left exec xdotool mousemove_relative -- -$quick 0
-	bindsym Shift+Down exec xdotool mousemove_relative 0 $quick
-	bindsym Shift+Up exec xdotool mousemove_relative -- 0 -$quick
-	bindsym Shift+Right exec xdotool mousemove_relative $quick 0
-
-	# Mouse movement (fast) -- vim keybindings
-
-	bindsym Shift+$alt+h exec xdotool mousemove_relative -- -$fast 0
-	bindsym Shift+$alt+j exec xdotool mousemove_relative 0 $fast
-	bindsym Shift+$alt+k exec xdotool mousemove_relative -- 0 -$fast
-	bindsym Shift+$alt+l exec xdotool mousemove_relative $fast 0
-
-	# Mouse movement (fast) -- arrow keys
-
-	bindsym Shift+$alt+Left exec xdotool mousemove_relative -- -$fast 0
-	bindsym Shift+$alt+Down exec xdotool mousemove_relative 0 $fast
-	bindsym Shift+$alt+Up exec xdotool mousemove_relative -- 0 -$fast
-	bindsym Shift+$alt+Right exec xdotool mousemove_relative $fast 0
-
-	# Left Click
-	bindsym f exec xdotool click 1
-
-	# Right Click
-	bindsym d exec xdotool click 3
-
-	# Middle Click
-	bindsym s exec xdotool click 2
-
-	# Left Click-and-drag
-	bindsym Shift+f exec xdotool mousedown 1
-
-	# Right Click-and-drag 
-	bindsym Shift+d exec xdotool mousedown 3
-
-	# Middle Click-and-drag
-	bindsym Shift+s exec xdotool mousedown 2
-
-	# Left Drag release
-	bindsym $alt+f exec xdotool mouseup 1
-
-	# Right Drag release
-	bindsym $alt+d exec xdotool mouseup 3
-
-	# Middle Drag release
-	bindsym $alt+s exec xdotool mouseup 2
-
-	# return to normal keybindings -- IMPORTANT!!
-
-	bindsym Escape mode "default"
-	bindsym q mode "default"
-}
-
-bindsym $alt+m mode "mouse"
-
-# }}}
-
 # Workspace Navigation {{{
 # set workspace names
 set $ws1 " 1 "
@@ -456,7 +367,7 @@ mode $mode_system {
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # troll mode
-    bindsym t exec --no-startup-id i3lock -p win -u -i $(find $pictures/troll -name "*.png" | shuf -n1), mode "default"
+    bindsym t exec --no-startup-id i3lock -p win -u -i $(find $pictures/troll-wallpapers -name "*.png" | shuf -n1), mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

@@ -1,5 +1,5 @@
 #!/bin/bash
-TEMPLATE=/home/anhdngo/vimwiki/assets/hosts
+TEMPLATE=/home/anhdngo/sync/assets/hosts
 echo $TEMPLATE
 diff -q /etc/hosts $TEMPLATE 1>/dev/null
 if [[ $? != "0" ]]
