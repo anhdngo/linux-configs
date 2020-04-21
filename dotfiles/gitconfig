@@ -1,8 +1,9 @@
 [user]
 	name = Anh Ngo
-	email = adn057@ucsd.edu
+	email = theanhdngo@gmail.com
 [core]
 	editor = vim
+	excludesfile = /home/anhdngo/.linux-configs/dotfiles/gitignore_global
 [alias]
     cane = commit --amend --no-edit
     l = log --oneline

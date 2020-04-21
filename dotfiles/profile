@@ -67,6 +67,8 @@ export SYNC=$HOME/sync
 export VIMWIKI=$SYNC/vimwiki/
 export PICTURES=$SYNC/assets
 
+export WORKON_HOME=~/Envs
+
 export LPASS_AGENT_TIMEOUT=0
 # }}}
 

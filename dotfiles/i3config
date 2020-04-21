@@ -103,7 +103,6 @@ bindsym $alt+Control+Shift+Return exec zsh $linux_configs/scripts/i3_shell.sh
 bindsym $alt+Control+r exec $ebooks
 
 # q=quit -> kill window
-bindsym Control+q kill
 bindsym Control+BackSpace kill
 bindsym $alt+Control+Backspace kill
 # e=explorer -> open explorer
