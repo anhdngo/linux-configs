@@ -26,7 +26,7 @@ template = """# {date}
 * 
 
 ## Distractions
-* 
+* [ ] 
 
 ## Notes"""
 

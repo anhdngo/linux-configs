@@ -55,8 +55,10 @@ export TERMINAL=$(which urxvt)
 
 if [ -x "$(which chromium-browser)" ]; then
     export BROWSER=$(which chromium-browser)
+    export BROWSER2="$(which chromium-browser) --incognito"
 elif [ -x "$(which chromium)" ]; then
     export BROWSER=$(which chromium)
+    export BROWSER2="$(which chromium) --incognito"
 elif [ -x "$(which firefox)" ]; then
     export BROWSER=$(which firefox)
 fi
