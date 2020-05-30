@@ -338,6 +338,15 @@ for_window [instance=$pavucontrol] move scratchpad
 for_window [instance=$pavucontrol] border pixel 5
 bindsym Control+$alt+p exec pavucontrol; [instance=$pavucontrol] scratchpad show; [instance=$pavucontrol] move position center
 
+# Anoise
+set $pavucontrol "anoise.py"
+for_window [instance=$anoise] floating enable
+for_window [instance=$anoise] move scratchpad
+for_window [instance=$anoise] border pixel 5
+bindsym Control+$alt+n exec anoise; [instance=$pavucontrol] scratchpad show; [instance=$pavucontrol] move position center
+
+
+
 # }}}
 
 # Reload i3{{{
