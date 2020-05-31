@@ -339,11 +339,11 @@ for_window [instance=$pavucontrol] border pixel 5
 bindsym Control+$alt+p exec pavucontrol; [instance=$pavucontrol] scratchpad show; [instance=$pavucontrol] move position center
 
 # Anoise
-set $pavucontrol "anoise.py"
+set $anoise "anoise.py"
 for_window [instance=$anoise] floating enable
 for_window [instance=$anoise] move scratchpad
 for_window [instance=$anoise] border pixel 5
-bindsym Control+$alt+n exec anoise; [instance=$pavucontrol] scratchpad show; [instance=$pavucontrol] move position center
+bindsym Control+$alt+n exec --no-startup-id anoise; [instance=$anoise] scratchpad show; [instance=$anoise] move position center
 
 
 
