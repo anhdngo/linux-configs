@@ -43,6 +43,7 @@ tree
 python-pyqtwebengine
 rofi
 lastpass-cli
+pavucontrol
 
 # Visual
 # fonts-dejavu
