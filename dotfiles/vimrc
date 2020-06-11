@@ -167,7 +167,7 @@ noremap <leader>] :lnext<CR>
 " Tags (Tagbar + Gutentags) {{{
 map <C-m> :TagbarToggle<CR>
 let g:gutentags_ctags_exclude = ["node_modules"]
-" let g:gutentags_cache_dir = '/tmp/gutentags'
+let g:gutentags_cache_dir = '/tmp/gutentags'
 
 " Tag Commands
 " <C-]> - Go to definition

@@ -6,3 +6,4 @@ nerd-fonts-dejavu-complete
 pcloud-drive
 retroarch-git
 woeusb
+anoise-gui

@@ -110,3 +110,9 @@ unsetopt prompt_cr prompt_sp
 
 #echo $(shuf -n 1 $VIMWIKI/quotes.md) | lolcat
 #source $CONFIG/scripts/checklist.sh
+
+# disable ctrl+s terminal freeze in interactive shells
+if [[ -t 0 && $- = *i* ]]
+then
+    stty -ixon
+fi 

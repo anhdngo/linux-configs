@@ -6,16 +6,14 @@ net-tools
 curl
 wget
 scrot
-pinta
 neofetch
-syncthing
 pulseaudio
 pulseaudio-alsa
 thunar
 
 # Terminal
 zsh
-tmux
+#tmux
 terminator
 rxvt-unicode
 guake
@@ -25,7 +23,7 @@ qutebrowser
 chromium
 
 # Vim
-vim
+gvim
 the_silver_searcher
 ctags
 
@@ -40,9 +38,7 @@ xdotool
 
 # Other
 vlc
-cowsay
-fortune-mod
-lolcat
+mpv
 tree
 python-pyqtwebengine
 rofi

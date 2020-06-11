@@ -1,8 +1,8 @@
 .PHONY: common
-common: ohmyzsh dotbot pathogen vim-plugins qute-plugins
+common: ohmyzsh dotbot vim-plugins
 
 .PHONY: manjaro
-manjaro: pacman common
+manjaro: pacman common yay
 
 .PHONY: xubuntu
 xubuntu: apt common
@@ -63,8 +63,7 @@ hosts-crontab:
 .PHONY: yay
 yay:
 	git clone https://aur.archlinux.org/yay.git
-	cd yay
-	makepkg -si
+	cd yay && makepkg -si
 	rm -rf ./yay
 
 .PHONY: gitignore-global
