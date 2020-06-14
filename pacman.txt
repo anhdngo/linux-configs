@@ -42,8 +42,12 @@ mpv
 tree
 python-pyqtwebengine
 rofi
+rofi-calc
 lastpass-cli
 pavucontrol
+
+# Bluetooth
+blueman
 
 # Visual
 # fonts-dejavu

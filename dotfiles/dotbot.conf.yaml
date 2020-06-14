@@ -36,6 +36,8 @@
         path: qutebrowser
     ~/.config/mpb/mpv.conf:
         path: mpv.conf
+    ~/.config/rofi/config:
+        path: rofi.config
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
