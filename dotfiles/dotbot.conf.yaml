@@ -34,7 +34,7 @@
         path: profile
     ~/.config/qutebrowser/config.py:
         path: qutebrowser
-    ~/.config/mpb/mpv.conf:
+    ~/.config/mpv/mpv.conf:
         path: mpv.conf
     ~/.config/rofi/config:
         path: rofi.config
