@@ -1,9 +1,21 @@
-aseprite
-brother-hll2320d
-godot
-logmein-hamachi
+# Essential
 nerd-fonts-dejavu-complete
 pcloud-drive
-retroarch-git
-woeusb
+
+# Productivity
 anoise-gui
+pomotroid-bin
+
+# Gaming
+logmein-hamachi
+retroarch-git
+
+# Gamedev
+aseprite
+godot
+
+# Hardware
+brother-hll2320d
+
+# Other
+woeusb

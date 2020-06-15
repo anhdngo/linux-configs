@@ -297,15 +297,6 @@ bindsym $sup+Shift+l move container to workspace next; workspace next
 # exec --no-startup-id terminator -T $dropdown -e tmux
 # bindsym F9 [title=$dropdown] scratchpad show; [title=$dropdown] move position center
 
-# Math
-# set $math "math"
-# for_window [title=$math] floating enable
-# for_window [title=$math] resize set 800 300
-# for_window [title=$math] move scratchpad
-# for_window [title=$math] border pixel 5
-# exec --no-startup-id terminator -T $math -e python
-# bindsym F10 [title=$math] scratchpad show; [title=$math] move position center
-
 # Spotify
 # set $spotify "spotify"
 # for_window [instance=$spotify] floating enable
@@ -335,7 +326,7 @@ for_window [instance=$pavucontrol] floating enable
 for_window [instance=$pavucontrol] resize set 1600 800
 for_window [instance=$pavucontrol] move scratchpad
 for_window [instance=$pavucontrol] border pixel 5
-bindsym Control+$alt+p exec pavucontrol; [instance=$pavucontrol] scratchpad show; [instance=$pavucontrol] move position center
+bindsym Control+$alt+a exec pavucontrol; [instance=$pavucontrol] scratchpad show; [instance=$pavucontrol] move position center
 
 # Anoise
 set $anoise "anoise.py"
@@ -344,7 +335,14 @@ for_window [instance=$anoise] move scratchpad
 for_window [instance=$anoise] border pixel 5
 bindsym Control+$alt+n exec --no-startup-id anoise; [instance=$anoise] scratchpad show; [instance=$anoise] move position center
 
+# Pomodoro
+set $pomodoro "pomotroid"
+for_window [instance=$pomodoro] floating enable
+for_window [instance=$pomodoro] move scratchpad
+for_window [instance=$pomodoro] border pixel 5
+bindsym Control+$alt+p exec --no-startup-id "$CONFIG/scripts/runinstance.sh pomotroid pomotroid"; [instance=$pomodoro] scratchpad show; [instance=$pomodoro] move position center
 
+bindsym Control+$alt+l exec --no-startup-id "$CONFIG/scripts/test.sh"
 
 # }}}
 
@@ -467,8 +465,8 @@ for_window [class="^.*"] border pixel 1
 exec --no-startup-id nm-applet
 exec --no-startup-id /opt/pcloud
 exec --no-startup-id pcloud
-#exec --no-startup-id pulseaudio -D
-exec --no-startup-id "guake --no-startup-script"
+exec --no-startup-id guake --no-startup-script
+exec --no-startup-id blueman-tray --no-startup-script
 
 # Manjaro apps
 exec --no-startup-id volumeicon
