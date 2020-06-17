@@ -474,7 +474,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id /opt/pcloud
 exec --no-startup-id pcloud
 exec --no-startup-id guake --no-startup-script
-exec --no-startup-id blueman-tray --no-startup-script
+exec --no-startup-id blueman-tray
 
 # Manjaro apps
 exec --no-startup-id volumeicon
