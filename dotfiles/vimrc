@@ -90,6 +90,8 @@ Plugin 'valloric/youcompleteme'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vimwiki/vimwiki'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 call vundle#end()
 filetype plugin indent on
 " }}}
@@ -166,8 +168,26 @@ noremap <leader>] :lnext<CR>
 
 " Tags (Tagbar + Gutentags) {{{
 map <C-m> :TagbarToggle<CR>
+set tags^=.git/tags,*/.git/tags;~
+let g:gutentags_project_root = [".git"]
 let g:gutentags_ctags_exclude = ["node_modules"]
-let g:gutentags_cache_dir = '/tmp/gutentags'
+" let g:gutentags_cache_dir = '/tmp/gutentags'
+let g:gutentags_ctags_tagfile = './.git/tags'
+
+" CTag Typescript Support
+let g:tagbar_type_typescript = {
+  \ 'ctagstype': 'typescript',
+  \ 'kinds': [
+    \ 'c:classes',
+    \ 'n:modules',
+    \ 'f:functions',
+    \ 'v:variables',
+    \ 'v:varlambdas',
+    \ 'm:members',
+    \ 'i:interfaces',
+    \ 'e:enums',
+  \ ]
+\ }
 
 " Tag Commands
 " <C-]> - Go to definition
