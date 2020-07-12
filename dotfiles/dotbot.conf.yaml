@@ -38,6 +38,8 @@
         path: mpv.conf
     ~/.config/rofi/config:
         path: rofi.config
+    ~/.hyper.js:
+        path: hyper.js
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

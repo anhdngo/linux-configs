@@ -7,10 +7,6 @@ manjaro: pacman common yay
 .PHONY: xubuntu
 xubuntu: apt common
 
-.PHONY: wsl
-wsl:
-
-
 .PHONY: pacman
 pacman:
 	sudo pacman -S $(shell grep -vE "^\s*#" ./pacman.txt | tr "\n" " ")
@@ -38,11 +34,6 @@ ohmyzsh:
 vim-plugins:
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall +qall
-
-.PHONY: symlinks
-symlinks:
-	ln -s $(JDFS)/10-19-workspace ~/workspace
-	ln -s $(JDFS)/10-19-workspace/11-orgs/11.00-tuas ~/tuas
 
 .PHONY: qute-plugins
 qute-plugins:
