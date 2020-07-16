@@ -137,8 +137,8 @@ bindsym $alt+Down focus down
 bindsym $alt+Up focus up
 bindsym $alt+Right focus right
 
-# enable alt+tab to switch windows
-bindsym $alt+Tab focus right
+# enable alt+tab to switch monitors
+bindsym $alt+Tab focus output right
 
 # move focused window
 bindsym $alt+Shift+h move left
@@ -260,6 +260,21 @@ bindsym $sup+Shift+Left move container to workspace prev; workspace prev
 bindsym $sup+Shift+Right move container to workspace next; workspace next
 bindsym $sup+Shift+h move container to workspace prev; workspace prev
 bindsym $sup+Shift+l move container to workspace next; workspace next
+
+# move workspace to next/prev monitor
+bindsym $alt+$sup+h move workspace to output left
+bindsym $alt+$sup+l move workspace to output right
+bindsym $alt+$sup+Left move workspace to output left
+bindsym $alt+$sup+Right move workspace to output right
+
+# move container to next/prev monitor
+bindsym $alt+$sup+Shift+h move container to output left
+bindsym $alt+$sup+Shift+l move container to output right
+bindsym $alt+$sup+Shift+Up move container to output left
+bindsym $alt+$sup+Shift+Down move container to output right
+
+
+
 # }}}
 
 # Window Defaults {{{
