@@ -57,7 +57,7 @@ bar {
     hidden_state hide
     modifier $sup
     # show status
-    status_command $linux_configs/bumblebee-status/bumblebee-status -m battery date time pasink pasource -p root.path=/ time.format="%I:%M %p" date.format="%a, %b %d %Y" nic.exclude="ham0,docker0,lo" -t greyish-powerline
+    status_command $linux_configs/bumblebee-status/bumblebee-status -m battery date time pasink pasource -p root.path=/ time.format="%I:%M:%S %p" date.format="%a, %b %d %Y" nic.exclude="ham0,docker0,lo" -t greyish-powerline
     # fonts
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
     font pango:DejaVu Sans Mono 9

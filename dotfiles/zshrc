@@ -116,3 +116,6 @@ if [[ -t 0 && $- = *i* ]]
 then
     stty -ixon
 fi 
+
+# key modifications
+setxkbmap -option caps:super
