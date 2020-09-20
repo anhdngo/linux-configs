@@ -296,6 +296,13 @@ bindsym $alt+$sup+Shift+Down move container to output right
 # for_window [title=$mixer] resize set 1000 600
 # for_window [title=$mixer] border pixel 5
 # bindsym Control+$alt+m exec terminator -e 'alsamixer' -T $mixer
+
+# QJackCTL window
+set $jack "QjackCtl"
+for_window [title=$jack] floating enable
+for_window [title=$jack] border pixel 5
+bindsym Control+$alt+j exec qjackctl
+
 # }}}
 
 # Scratchpad and Dropdown {{{
@@ -465,6 +472,22 @@ mode $mode_display {
     bindsym Escape mode "default"
 }
 bindsym $alt+Control+d mode $mode_display
+
+# }}}
+
+# Mouse Control {{{
+
+# button1 = left mouse button
+# button2 = scroll wheel button
+# button3 = right mouse button
+# button8/9 = side scroll wheel button
+
+# alt+right mouse: toggle floating
+bindsym --whole-window $alt+button3 floating toggle
+
+# side scroll wheel moves window to other monitor
+bindsym --whole-window button8 move container to output left
+bindsym --whole-window button9 move container to output right
 
 # }}}
 

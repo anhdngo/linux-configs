@@ -10,8 +10,11 @@ alias rl="exec $SHELL -l"
 alias :q=exit
 alias c=clear
 alias vi=vim
+alias vo=vim
 alias g=git
 alias ack=ag
+alias pthon=python
+alias py=python
 
 # Open File/Application, Detach from Terminal
 xdg() { nohup xdg-open $1 >/dev/null 2>&1  &; disown }
@@ -27,9 +30,14 @@ alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
 alias doc="cd ~/Documents"
 alias cf=$CONFIG
-alias ws="cd $WS"
+alias ws="cws"
 alias sync="cd $SYNC"
 alias autouploadv3="$WS/evt/automation-scripts-misc/jetson/autouploadv3"
+
+alias evt="cd /evt"
+alias ev="cd /evt"
+alias ds="cd /evt/device-scripts"
+alias dtt="cd /evt/device-testing-tool"
 
 # Vimwiki Shortcuts
 alias vws="cd $VIMWIKI"

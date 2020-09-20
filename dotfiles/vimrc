@@ -24,6 +24,7 @@ set hlsearch        " highlight matches
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR> 
+nnoremap <leader><backspace> :nohlsearch<CR> 
 " }}}
 
 " Folding {{{
