@@ -382,14 +382,14 @@ bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # mode to suspend/shutdown computer
 # set $Locker i3lock -i $linux_configs/wallpapers/wallpaper.png && sleep 1
 #set $Locker $linux_configs/scripts/lock.sh
-set $Locker $CONFIG/scripts/lock.sh
+set $Locker $CONFIG/scripts/multimonitor_lock.sh -n -f
 
 set $mode_system "System (l) lock, (e) logout, (s) suspend, (t) troll suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown"
 mode $mode_system {
     bindsym l exec --no-startup-id $Locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id "$Locker; systemctl suspend", mode "default"
+    bindsym h exec --no-startup-id "$Locker; systemctl hibernate", mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
