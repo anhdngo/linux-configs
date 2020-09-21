@@ -176,6 +176,11 @@ bindsym $alt+w layout tabbed
 bindsym $alt+e layout toggle split
 bindsym $alt+q layout toggle all
 
+bindsym $alt+1 layout splith
+bindsym $alt+2 layout splitv
+bindsym $alt+3 layout tabbed
+bindsym $alt+4 layout stacking
+
 # change focus between tiling / floating windows
 bindsym $alt+space focus mode_toggle
 
@@ -210,17 +215,6 @@ bindsym $sup+7 workspace $ws7
 bindsym $sup+8 workspace $ws8
 bindsym $sup+9 workspace $ws9
 bindsym $sup+0 workspace $ws10
-
-bindsym $alt+1 workspace $ws1
-bindsym $alt+2 workspace $ws2
-bindsym $alt+3 workspace $ws3
-bindsym $alt+4 workspace $ws4
-bindsym $alt+5 workspace $ws5
-bindsym $alt+6 workspace $ws6
-bindsym $alt+7 workspace $ws7
-bindsym $alt+8 workspace $ws8
-bindsym $alt+9 workspace $ws9
-bindsym $alt+0 workspace $ws10
 
 # switch workspace using left and right
 bindsym $sup+Left workspace prev
@@ -267,13 +261,11 @@ bindsym $alt+$sup+l move workspace to output right
 bindsym $alt+$sup+Left move workspace to output left
 bindsym $alt+$sup+Right move workspace to output right
 
-# move container to next/prev monitor
-bindsym $alt+$sup+Shift+h move container to output left
-bindsym $alt+$sup+Shift+l move container to output right
-bindsym $alt+$sup+Shift+Up move container to output left
-bindsym $alt+$sup+Shift+Down move container to output right
-
-
+# move focused container to next/prev monitor
+bindsym $alt+$sup+k move container to output left
+bindsym $alt+$sup+j move container to output right
+bindsym $alt+$sup+Up move container to output left
+bindsym $alt+$sup+Down move container to output right
 
 # }}}
 
@@ -415,11 +407,21 @@ mode "resize" {
     bindsym k resize shrink height 10 px or 10 ppt
     bindsym l resize grow width 10 px or 10 ppt
 
+    bindsym Shift+h resize shrink width 2 px or 2 ppt
+    bindsym Shift+j resize grow height 2 px or 2 ppt
+    bindsym Shift+k resize shrink height 2 px or 2 ppt
+    bindsym Shift+l resize grow width 2 px or 2 ppt
+
     # same bindings, but for the arrow keys
     bindsym Left resize shrink width 10 px or 10 ppt
     bindsym Down resize grow height 10 px or 10 ppt
     bindsym Up resize shrink height 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
+
+    bindsym Shift+Left resize shrink width 2 px or 2 ppt
+    bindsym Shift+Down resize grow height 2 px or 2 ppt
+    bindsym Shift+Up resize shrink height 2 px or 2 ppt
+    bindsym Shift+Right resize grow width 2 px or 2 ppt
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -480,14 +482,26 @@ bindsym $alt+Control+d mode $mode_display
 # button1 = left mouse button
 # button2 = scroll wheel button
 # button3 = right mouse button
+# button4/5 = scroll up/down
 # button8/9 = side scroll wheel button
 
 # alt+right mouse: toggle floating
-bindsym --whole-window $alt+button3 floating toggle
+bindsym --whole-window $alt+button3 fullscreen disable, floating toggle
+
+# click scrollbar: toggle fullscreen
+bindsym --whole-window button2 fullscreen toggle
 
 # side scroll wheel moves window to other monitor
 bindsym --whole-window button8 move container to output left
 bindsym --whole-window button9 move container to output right
+
+# scroll up/down for resizing
+# horizontal
+bindsym --whole-window $alt+button4 resize grow width 2px or 2ppt
+bindsym --whole-window $alt+button5 resize shrink width 2px or 2ppt
+# vertical
+bindsym --whole-window $alt+Shift+button4 resize grow height 2px or 2ppt
+bindsym --whole-window $alt+Shift+button5 resize shrink height 2px or 2ppt
 
 # }}}
 
@@ -506,7 +520,6 @@ exec --no-startup-id compton
 # gaps outer 2
 for_window [class="^.*"] border pixel 1
 # }}}
-
 
 exec --no-startup-id nm-applet
 exec --no-startup-id /opt/pcloud
