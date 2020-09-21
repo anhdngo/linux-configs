@@ -40,6 +40,8 @@
         path: rofi.config
     ~/.hyper.js:
         path: hyper.js
+    ~/.config/glava/radial.glsl:
+        path: glava-entries/custom-radial.glsl
     ~/.config/glava/screen-1.glsl:
         path: glava-entries/screen-1.glsl
     ~/.config/glava/screen-2.glsl:
