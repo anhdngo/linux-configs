@@ -40,6 +40,10 @@
         path: rofi.config
     ~/.hyper.js:
         path: hyper.js
+    ~/.config/glava/screen-1.glsl:
+        path: glava-entries/screen-1.glsl
+    ~/.config/glava/screen-2.glsl:
+        path: glava-entries/screen-2.glsl
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

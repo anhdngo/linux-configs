@@ -527,6 +527,10 @@ exec --no-startup-id pcloud
 exec --no-startup-id guake --no-startup-script
 exec --no-startup-id blueman-tray
 
+# glava audio visualizer
+exec --no-startup-id glava --desktop --entry=screen-1.glsl
+exec --no-startup-id glava --desktop --entry=screen-2.glsl
+
 # Manjaro apps
 exec --no-startup-id volumeicon
 

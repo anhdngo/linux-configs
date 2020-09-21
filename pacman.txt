@@ -45,6 +45,7 @@ rofi
 rofi-calc
 lastpass-cli
 pavucontrol
+glava
 
 # Bluetooth
 blueman
