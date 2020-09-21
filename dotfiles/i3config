@@ -6,6 +6,7 @@ set $browser $BROWSER
 set $browser2 $BROWSER2
 set $ebooks $EBOOKS
 set $pictures $PICTURES
+set $screenshots ~/Pictures/screenshots
 
 # BINDING STANDARDS:
 # mod is used for manipulating windows within one workspace
@@ -457,9 +458,9 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Screenshot {{{
 # Takes screenshot with scrot, then uses xclip to save that to clipboard
-bindsym --release $alt+p exec scrot -u -e 'xclip -selection c -t image/png < $f' ~/Pictures/screenshot-%b%d-%H%M%S.png
-bindsym --release $alt+Shift+p exec scrot -s -e 'xclip -selection c -t image/png < $f' ~/Pictures/screenshot-%b%d-%H%M%S.png
-bindsym --release $alt+$sup+p exec scrot -e 'xclip -selection c -t image/png < $f' ~/Pictures/screenshot-%b%d-%H%M%S.png
+bindsym --release $alt+p exec mkdir -p $screenshots && scrot -u -e 'xclip -selection c -t image/png < $f' $screenshots/screenshot-%b%d-%H%M%S.png
+bindsym --release $alt+Shift+p exec mkdir -p $screenshots && scrot -s -e 'xclip -selection c -t image/png < $f' $screenshots/screenshot-%b%d-%H%M%S.png
+bindsym --release $alt+$sup+p exec mkdir -p $screenshots && scrot -e 'xclip -selection c -t image/png < $f' $screenshots/screenshot-%b%d-%H%M%S.png
 # }}}
 
 # Display Settings {{{
