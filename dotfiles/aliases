@@ -37,7 +37,7 @@ alias autouploadv3="$WS/evt/automation-scripts-misc/jetson/autouploadv3"
 alias evt="cd /evt"
 alias ev="cd /evt"
 alias ds="cd /evt/device-scripts"
-alias dtt="cd /evt/device-testing-tool"
+alias dtt="cd /evt/device-scripts/device_testing_tool"
 
 # Vimwiki Shortcuts
 alias vws="cd $VIMWIKI"

@@ -522,15 +522,28 @@ exec --no-startup-id compton
 for_window [class="^.*"] border pixel 1
 # }}}
 
+# Glava Audio Visualizer {{{
+#exec --no-startup-id glava --desktop --entry=screen1.glsl
+#exec --no-startup-id glava --desktop --entry=screen2.glsl
+
+set $mode_glava "(s) start, (k) kill"
+mode $mode_glava {
+    bindsym s exec --no-startup-id glava --desktop --entry=screen1.glsl, exec --no-startup-id glava --desktop --entry=screen2.glsl, mode "default"
+    bindsym k exec killall glava, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $alt+Control+g mode $mode_glava
+
+# }}}
+
 exec --no-startup-id nm-applet
 exec --no-startup-id /opt/pcloud
 exec --no-startup-id pcloud
 exec --no-startup-id guake --no-startup-script
 exec --no-startup-id blueman-tray
-
-# glava audio visualizer
-exec --no-startup-id glava --desktop --entry=screen-1.glsl
-exec --no-startup-id glava --desktop --entry=screen-2.glsl
 
 # Manjaro apps
 exec --no-startup-id volumeicon

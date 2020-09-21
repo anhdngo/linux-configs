@@ -42,10 +42,12 @@
         path: hyper.js
     ~/.config/glava/radial.glsl:
         path: glava-entries/custom-radial.glsl
-    ~/.config/glava/screen-1.glsl:
-        path: glava-entries/screen-1.glsl
-    ~/.config/glava/screen-2.glsl:
-        path: glava-entries/screen-2.glsl
+    ~/.config/glava/screen1.glsl:
+        path: glava-entries/screen1.glsl
+    ~/.config/glava/screen2.glsl:
+        path: glava-entries/screen2.glsl
+    ~/.local/bin/mpvg:
+        path: mpv_glava.sh
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
