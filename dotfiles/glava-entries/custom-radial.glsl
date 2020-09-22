@@ -10,7 +10,7 @@
 /* outline color */
 #define OUTLINE MAIN_COLOR
 /* number of bars (use even values for best results) */
-#define NBARS 90
+#define NBARS 2000
 /* width (in pixels) of each bar*/
 #define BAR_WIDTH 20
 /* outline color */
@@ -20,7 +20,7 @@
 /* Amplify magnitude of the results each bar displays */
 #define AMPLIFY 300
 /* Bar color */ 
-#define COLOR (MAIN_COLOR * ((d / 40) + 1))
+#define COLOR (MAIN_COLOR * ((d / 160) + 1))
 /* Angle (in radians) for how much to rotate the visualizer */
 #define ROTATE (PI / 2)
 /* Whether to switch left/right audio buffers */

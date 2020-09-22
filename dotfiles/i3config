@@ -484,7 +484,8 @@ bindsym $alt+Control+d mode $mode_display
 # button2 = scroll wheel button
 # button3 = right mouse button
 # button4/5 = scroll up/down
-# button8/9 = side scroll wheel button
+# button6/7 = side scroll wheel button (work mouse)
+# button8/9 = side scroll wheel button (home mouse), thumb buttons (work mouse)
 
 # alt+right mouse: toggle floating
 bindsym --whole-window $alt+button3 fullscreen disable, floating toggle
@@ -493,6 +494,9 @@ bindsym --whole-window $alt+button3 fullscreen disable, floating toggle
 bindsym --whole-window button2 fullscreen toggle
 
 # side scroll wheel moves window to other monitor
+bindsym --whole-window button6 move container to output left
+bindsym --whole-window button7 move container to output right
+
 bindsym --whole-window button8 move container to output left
 bindsym --whole-window button9 move container to output right
 
