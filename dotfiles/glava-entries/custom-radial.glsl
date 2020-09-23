@@ -10,15 +10,15 @@
 /* outline color */
 #define OUTLINE MAIN_COLOR
 /* number of bars (use even values for best results) */
-#define NBARS 2000
+#define NBARS 100
 /* width (in pixels) of each bar*/
-#define BAR_WIDTH 20
+#define BAR_WIDTH 10
 /* outline color */
 #define BAR_OUTLINE OUTLINE
 /* outline width (in pixels, set to 0 to disable outline drawing) */
 #define BAR_OUTLINE_WIDTH 0
 /* Amplify magnitude of the results each bar displays */
-#define AMPLIFY 300
+#define AMPLIFY 400
 /* Bar color */ 
 #define COLOR (MAIN_COLOR * ((d / 160) + 1))
 /* Angle (in radians) for how much to rotate the visualizer */
@@ -37,7 +37,7 @@
 #define CENTER_OFFSET_X 0
 
 /* Gravity step, override from `smooth_parameters.glsl` */
-#request setgravitystep 5.0
+#request setgravitystep 10.0
 
 /* Smoothing factor, override from `smooth_parameters.glsl` */
-#request setsmoothfactor 0.02
+#request setsmoothfactor 0.05

@@ -502,11 +502,11 @@ bindsym --whole-window button9 move container to output right
 
 # scroll up/down for resizing
 # horizontal
-bindsym --whole-window $alt+button4 resize grow width 2px or 2ppt
-bindsym --whole-window $alt+button5 resize shrink width 2px or 2ppt
+bindsym --whole-window $alt+button4 resize grow width 5px or 5ppt
+bindsym --whole-window $alt+button5 resize shrink width 5px or 5ppt
 # vertical
-bindsym --whole-window $alt+Shift+button4 resize grow height 2px or 2ppt
-bindsym --whole-window $alt+Shift+button5 resize shrink height 2px or 2ppt
+bindsym --whole-window $alt+Shift+button4 resize grow height 5px or 5ppt
+bindsym --whole-window $alt+Shift+button5 resize shrink height 5px or 5ppt
 
 # }}}
 
@@ -530,16 +530,8 @@ for_window [class="^.*"] border pixel 1
 #exec --no-startup-id glava --desktop --entry=screen1.glsl
 #exec --no-startup-id glava --desktop --entry=screen2.glsl
 
-set $mode_glava "(s) start, (k) kill"
-mode $mode_glava {
-    bindsym s exec --no-startup-id glava --desktop --entry=screen1.glsl, exec --no-startup-id glava --desktop --entry=screen2.glsl, mode "default"
-    bindsym k exec killall glava, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $alt+Control+g mode $mode_glava
+bindsym $alt+Control+g exec --no-startup-id glava --desktop --entry=screen1.glsl, exec --no-startup-id glava --desktop --entry=screen2.glsl
+bindsym $alt+Control+Shift+g exec --no-startup-id killall glava
 
 # }}}
 
