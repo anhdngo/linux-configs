@@ -60,3 +60,7 @@ yay:
 .PHONY: gitignore-global
 gitignore-global:
 	git config --global core.excludesfile $(shell pwd)/dotfiles/gitignore_global
+
+.PHONY: disable-ipv6
+disable-ipv6:
+	sudo cp ./40-ipv6.conf /etc/sysctl.d/
