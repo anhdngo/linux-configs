@@ -1,6 +1,6 @@
 [user]
 	name = Anh Ngo
-	email = theanhdngo@gmail.com
+	email = code@anhngo.me
 [core]
 	editor = vim
 	excludesfile = /home/anhdngo/.linux-configs/dotfiles/gitignore_global

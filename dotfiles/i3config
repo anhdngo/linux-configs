@@ -493,11 +493,17 @@ bindsym --whole-window $alt+button3 fullscreen disable, floating toggle
 bindsym --whole-window button2 fullscreen toggle
 
 # side scroll wheel moves window to other monitor
-bindsym --whole-window button6 move container to output left
-bindsym --whole-window button7 move container to output right
+#bindsym --whole-window button6 move container to output left
+#bindsym --whole-window button7 move container to output right
 
-bindsym --whole-window button8 move container to output left
-bindsym --whole-window button9 move container to output right
+#bindsym --whole-window button8 move container to output left
+#bindsym --whole-window button9 move container to output right
+
+#bindsym --whole-window button6 workspace prev
+#bindsym --whole-window button7 workspace next
+
+bindsym --whole-window button8 workspace prev
+bindsym --whole-window button9 workspace next
 
 # scroll up/down for resizing
 # horizontal

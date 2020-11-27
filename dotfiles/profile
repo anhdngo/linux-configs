@@ -53,6 +53,9 @@ export TERMINAL=$(which urxvt)
 #     export BROWSER=/opt/qutebrowser*/qutebrowser.py
 # fi
 
+#if [ -x "$(which qutebrowser)" ]; then
+#    export BROWSER=$(which qutebrowser)
+#    export BROWSER2=$(which firefox)
 if [ -x "$(which chromium-browser)" ]; then
     export BROWSER=$(which chromium-browser)
     export BROWSER2="$(which chromium-browser) --incognito"
