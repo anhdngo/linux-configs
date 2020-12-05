@@ -77,8 +77,8 @@ bar {
 
 }
 
-bindsym $alt+b bar mode hide; bar hidden_state hide
-bindsym $alt+Shift+b bar mode dock; bar hidden_state show
+#bindsym $alt+b bar mode hide; bar hidden_state hide
+bindsym $alt+Shift+b bar mode toggle; bar hidden_state toggle
 # }}}
 
 # {{{ Fonts
@@ -155,7 +155,7 @@ bindsym $alt+Shift+Right move right
 # toggle fullscreen for focused window
 bindsym $sup+k fullscreen toggle
 bindsym $sup+Up fullscreen toggle
-bindsym $alt+f fullscreen toggle
+# bindsym $alt+f fullscreen toggle
 # toggle floating mode for focused window
 bindsym $sup+j floating toggle
 bindsym $sup+Down floating toggle
