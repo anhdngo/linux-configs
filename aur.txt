@@ -19,3 +19,4 @@ brother-hll2320d
 
 # Other
 woeusb
+rofi-surfraw-git

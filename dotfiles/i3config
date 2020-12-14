@@ -111,6 +111,7 @@ bindsym $alt+Control+e exec thunar
 
 # start dmenu/rofi (a program launcher)
 bindsym $alt+Control+space exec "rofi -modi run,calc -show run"
+bindsym Control+Return exec "rofi-surfraw"
 
 # browser
 bindsym $alt+Control+b exec $browser
