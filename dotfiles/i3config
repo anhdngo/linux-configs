@@ -121,7 +121,10 @@ bindsym $alt+Control+Shift+b exec $browser2
 bindsym $alt+Control+s exec slack
 
 # mail
-bindsym $alt+Control+m exec mailspring
+# bindsym $alt+Control+m exec mailspring
+
+# password manager
+bindsym $alt+Control+p exec bwmenu
 
 # }}}
 
@@ -355,7 +358,7 @@ set $pomodoro "pomotroid"
 for_window [instance=$pomodoro] floating enable
 for_window [instance=$pomodoro] move scratchpad
 for_window [instance=$pomodoro] border pixel 5
-bindsym Control+$alt+p exec --no-startup-id "$CONFIG/scripts/runinstance.sh pomotroid pomotroid"; [instance=$pomodoro] scratchpad show; [instance=$pomodoro] move position center
+bindsym Control+$alt+Shift+p exec --no-startup-id "$CONFIG/scripts/runinstance.sh pomotroid pomotroid"; [instance=$pomodoro] scratchpad show; [instance=$pomodoro] move position center
 
 bindsym Control+$alt+l exec --no-startup-id "$CONFIG/scripts/test.sh"
 

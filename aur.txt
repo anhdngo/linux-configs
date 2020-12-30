@@ -17,6 +17,11 @@ godot
 # Hardware
 brother-hll2320d
 
+# Password Manager
+bitwarden
+bitwarden-cli
+bitwarden-rofi
+
 # Other
 woeusb
 rofi-surfraw-git
