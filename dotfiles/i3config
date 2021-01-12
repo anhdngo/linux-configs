@@ -360,7 +360,12 @@ for_window [instance=$pomodoro] move scratchpad
 for_window [instance=$pomodoro] border pixel 5
 bindsym Control+$alt+Shift+p exec --no-startup-id "$CONFIG/scripts/runinstance.sh pomotroid pomotroid"; [instance=$pomodoro] scratchpad show; [instance=$pomodoro] move position center
 
-bindsym Control+$alt+l exec --no-startup-id "$CONFIG/scripts/test.sh"
+# Arandr window
+set $arandr "arandr"
+for_window [instance=$arandr] floating enable
+for_window [instance=$pomodoro] move scratchpad
+for_window [instance=$arandr] border pixel 5
+bindsym Control+$alt+l exec --no-startup-id "$CONFIG/scripts/runinstance.sh arandr arandr"; [instance=$arandr] scratchpad show; [instance=$arandr] move position center
 
 # }}}
 
@@ -467,11 +472,12 @@ bindsym --release $alt+$sup+p exec mkdir -p $screenshots && scrot -e 'xclip -sel
 # }}}
 
 # Display Settings {{{
-set $mode_display "Display (l) layout, (r) resolution"
+set $mode_display "Display (l) layout, (r) resolution, Arandr (a)"
 mode $mode_display {
 
     bindsym l exec --no-startup-id "$CONFIG/scripts/monitor_layout.sh", mode "default"
     bindsym r exec --no-startup-id "$CONFIG/scripts/rofi-randr", mode "default"
+    bindsym a exec --no-startup-id "arandr", mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
