@@ -12,6 +12,7 @@ alias c=clear
 alias vi=vim
 alias vo=vim
 alias g=git
+alias dk=docker
 alias ack=ag
 alias pthon=python
 alias py=python

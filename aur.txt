@@ -15,7 +15,8 @@ aseprite
 godot
 
 # Hardware
-brother-hll2320d
+# brother-hll2320d
+brother-hl2270dw
 
 # Password Manager
 bitwarden
