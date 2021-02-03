@@ -48,7 +48,16 @@ alias vwt="vim -c :VimwikiMakeTomorrowDiaryNote"
 alias vwy="vim -c :VimwikiMakeYesterdayDiaryNote"
 alias vwi="vim $VIMWIKI/diary/diary.md -c :VimwikiDiaryGenerateLinks"
 
-# Prompt Command
+# Xrandr presets
+alias xr1="xrandr --output eDP1 --primary --mode 1920x1080 --output DP1 --off --output DP2 --off"
+alias xr2="xrandr --output eDP1 --primary --mode 1920x1080 --output DP1 --right-of eDP1 --mode 1920x1080 --output DP2 --off"
+alias xr3="xrandr --output eDP1 --primary --mode 1920x1080 --output DP1 --right-of eDP1 --mode 1920x1080 --output DP2 --right-of DP1 --mode 1920x1080"
+
+# Disable USB for suspend
+alias usboff='sudo rmmod xhci_pci; sudo rmmod xhci_hcd'
+alias usbon='sudo modprobe xhci_pci xhci_hcd'
+
+# Prompt Command {{{}
 precmd() { eval "$PROMPT_COMMAND" }
 export PROMPT_COMMAND="pwd > /tmp/whereami"
 
@@ -68,6 +77,7 @@ cwsfunc() {
             ;;
     esac
 }
+# }}}
 
 # Johnny Decimal System {{{
 ejdfunc() { echo ${1}/*/*/${2}* }

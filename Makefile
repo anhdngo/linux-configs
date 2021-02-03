@@ -1,5 +1,5 @@
 .PHONY: common
-common: ohmyzsh dotbot vim-plugins
+common: dotbot vim-plugins pyenv
 
 .PHONY: manjaro
 manjaro: pacman common yay
@@ -11,6 +11,10 @@ xubuntu: apt common
 pacman:
 	sudo pacman -S $(shell grep -vE "^\s*#" ./pacman.txt | tr "\n" " ")
 
+.PHONY: aur
+aur:
+	yay -S $(shell grep -vE "^\s*#" ./aur.txt | tr "\n" " ")
+
 .PHONY: apt
 apt:
 	sudo apt install $(shell grep -vE "^\s*#" apt.txt | tr "\n" " ")
@@ -19,6 +23,11 @@ apt:
 dotbot:
 	git submodule update --init --recursive
 	sh ./dotfiles/dotbot/bin/dotbot -c ./dotfiles/dotbot.conf.yaml
+
+.PHONY: pyenv
+pyenv:
+	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+	git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
     
 .PHONY: i3gaps
 i3gaps:
