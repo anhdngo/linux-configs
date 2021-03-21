@@ -12,6 +12,9 @@ pulseaudio-alsa
 thunar
 unzip
 
+# Security/Privacy
+veracrypt
+
 # Terminal
 zsh
 #tmux
@@ -21,7 +24,8 @@ guake
 
 # Browser
 qutebrowser
-chromium
+firefox
+brave
 
 # Vim
 gvim

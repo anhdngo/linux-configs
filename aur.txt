@@ -2,9 +2,13 @@
 nerd-fonts-dejavu-complete
 pcloud-drive
 
+# Security/Privacy
+cryptomator
+
 # Productivity
 anoise-gui
 pomotroid-bin
+joplin-desktop
 
 # Gaming
 #logmein-hamachi

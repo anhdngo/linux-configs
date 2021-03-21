@@ -124,3 +124,5 @@ export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv virtualenv-init -)"
 
 source /usr/share/nvm/init-nvm.sh
+
+nvm use 12.18.3

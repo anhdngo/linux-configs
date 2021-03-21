@@ -56,14 +56,10 @@ export TERMINAL=$(which urxvt)
 #if [ -x "$(which qutebrowser)" ]; then
 #    export BROWSER=$(which qutebrowser)
 #    export BROWSER2=$(which firefox)
-if [ -x "$(which chromium-browser)" ]; then
-    export BROWSER=$(which chromium-browser)
-    export BROWSER2="$(which chromium-browser) --incognito"
-elif [ -x "$(which chromium)" ]; then
-    export BROWSER=$(which chromium)
-    export BROWSER2="$(which chromium) --incognito"
-elif [ -x "$(which firefox)" ]; then
+if [ -x "$(which firefox)" ]; then
     export BROWSER=$(which firefox)
+elif [ -x "$(which brave)" ]; then
+    export BROWSER2="$(which brave)"
 fi
 
 export EBOOKS=/usr/bin/calibre
