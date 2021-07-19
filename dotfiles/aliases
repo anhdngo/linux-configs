@@ -5,7 +5,7 @@ export JDFS=$HOME/pCloudDrive/jdfs
 # Ease of Use
 alias sl="ls"
 alias l="ls"
-alias ll="ls -la"
+alias ll="ls -lahF"
 alias rl="exec $SHELL -l"
 alias :q=exit
 alias c=clear

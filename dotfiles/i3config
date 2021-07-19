@@ -8,22 +8,25 @@ set $ebooks $EBOOKS
 set $pictures $PICTURES
 set $screenshots ~/Pictures/screenshots
 
-# BINDING STANDARDS:
-# mod is used for manipulating windows within one workspace
-# altmod is used for manipulating windows across workspaces
-# control+mod is used for opening new applications
-# control+altmod is used for moving windows between workspaces
+# Set common scripts to vars
+set $rofi $DOTFILES/scripts/rofi/launch.sh
+set $music $DOTFILES/scripts/music/mpv-controller.sh
 
-# Modkeys {{{
-# Set $alt to Mod1 (alt)
+exec_always --no-startup-id feh --bg-scale --randomize $pictures/wallpapers/*
+gaps outer 5
+gaps inner 10
+gaps top 55
+for_window [class="^.*"] border pixel 1
+
+font xft:Hack Nerd Font Mono:pango:DejaVu Sans Mono 8:monospace 8
+
+bindsym $alt+Shift+c reload
+bindsym $alt+Shift+r restart
+
 set $alt Mod1
-# Set $sup to Mod4 (super/windows key)
 set $sup Mod4
 
-# Use Mouse+$alt to drag floating windows to their wanted position
 floating_modifier $alt
-
-# }}}
 
 # Color Themes (Tango) {{{
 
@@ -39,10 +42,6 @@ set_from_resource $lightbg      darkwhite      #BABDB6
 
 set_from_resource $warning      red      #CC0000
 
-
-# $i3-background
-exec_always --no-startup-id xsetroot -solid '#000000'
-
 # <clientclass> <border> <backg> <text> <indicator>
 client.focused          $primary $primary $lighttext $secondary
 client.focused_inactive $darkbg  $darkbg  $lighttext $darkbg
@@ -52,44 +51,36 @@ client.urgent           $warning $warning $lighttext $warning
 # }}}
 
 # i3 Bar {{{ 
-bar {
-    # hide bar and reveal when win key is pressed
-    mode hide
-    hidden_state hide
-    modifier $sup
-    # show status
-    status_command $linux_configs/bumblebee-status/bumblebee-status -m battery date time pasink pasource -p root.path=/ time.format="%I:%M:%S %p" date.format="%a, %b %d %Y" nic.exclude="ham0,docker0,lo" -t greyish-powerline
-    # fonts
-    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    font pango:DejaVu Sans Mono 9
-
-    colors {
-        # <workclass> <border> <backg> <text>
-        focused_workspace 	$primary $primary $lighttext
-        active_workspace 	$darkbg $darkbg   $lighttext
-        inactive_workspace	$darkbg $darkbg   $lighttext
-        urgent_workspace 	$warning $warning $lighttext
-
-        background #000000
-        separator  $darkblack
-        statusline $darkblack
-    }
-
-}
+#bar {
+#    # hide bar and reveal when win key is pressed
+#    mode hide
+#    hidden_state hide
+#    modifier $sup
+#    # show status
+#    status_command $linux_configs/bumblebee-status/bumblebee-status -m battery date time pasink pasource -p root.path=/ time.format="%I:%M:%S %p" date.format="%a, %b %d %Y" nic.exclude="ham0,docker0,lo" -t greyish-powerline
+#    # fonts
+#    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#    font pango:DejaVu Sans Mono 9
+#
+#    colors {
+#        # <workclass> <border> <backg> <text>
+#        focused_workspace 	$primary $primary $lighttext
+#        active_workspace 	$darkbg $darkbg   $lighttext
+#        inactive_workspace	$darkbg $darkbg   $lighttext
+#        urgent_workspace 	$warning $warning $lighttext
+#
+#        background #000000
+#        separator  $darkblack
+#        statusline $darkblack
+#    }
+#
+#}
 
 #bindsym $alt+b bar mode hide; bar hidden_state hide
-bindsym $alt+Shift+b bar mode toggle; bar hidden_state toggle
-# }}}
-
-# {{{ Fonts
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:DejaVu Sans Mono 8:monospace 8
-# }}}
+#bindsym $alt+Shift+b bar mode toggle; bar hidden_state toggle }}}
 
 # Application Hotkeys {{{
 
-# open terminal
 bindsym $alt+Control+t exec i3-sensible-terminal # -e tmux
 bindsym $alt+Control+Return exec zsh $linux_configs/scripts/i3_shell.sh
 #bindsym $alt+Control+Return exec zsh $linux_configs/scripts/i3_shell_tmux.sh
@@ -99,25 +90,17 @@ bindsym $alt+Control+Shift+Return exec zsh $linux_configs/scripts/i3_shell.sh
 
 bindsym $alt+Control+r exec $ebooks
 
-# q=quit -> kill window
 bindsym Control+BackSpace kill
-# e=explorer -> open explorer
-#bindsym $alt+Control+Shift+e exec i3-sensible-terminal -e ranger
 bindsym $alt+Control+e exec thunar
 
 # start dmenu/rofi (a program launcher)
-bindsym $alt+Control+space exec "rofi -modi run,calc -show run"
-bindsym Control+Return exec "rofi-surfraw"
+#bindsym $alt+Control+space exec "rofi -modi run,calc -show run"
+bindsym $alt+Control+space exec --no-startup-id $rofi appmenu
+bindsym Control+Delete exec --no-startup-id $rofi powermenu
 
 # browser
 bindsym $alt+Control+b exec $browser
 bindsym $alt+Control+Shift+b exec $browser2
-
-# slack
-bindsym $alt+Control+s exec slack
-
-# mail
-# bindsym $alt+Control+m exec mailspring
 
 # password manager
 bindsym $alt+Control+p exec bwmenu
@@ -125,70 +108,38 @@ bindsym $alt+Control+p exec bwmenu
 # }}}
 
 # Focus Navigation {{{
-# change focus
 bindsym $alt+h focus left
 bindsym $alt+j focus down
 bindsym $alt+k focus up
 bindsym $alt+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $alt+Left focus left
-bindsym $alt+Down focus down
-bindsym $alt+Up focus up
-bindsym $alt+Right focus right
+bindsym $alt+u focus parent
+bindsym $alt+i focus child
 
-# enable alt+tab to switch monitors
 bindsym $alt+Tab focus output right
+bindsym $alt+Shift+Tab focus output left
 
-# move focused window
 bindsym $alt+Shift+h move left
 bindsym $alt+Shift+j move down
 bindsym $alt+Shift+k move up
 bindsym $alt+Shift+l move right
 
-# alternatively, you can use the cursor keys:
-bindsym $alt+Shift+Left move left
-bindsym $alt+Shift+Down move down
-bindsym $alt+Shift+Up move up
-bindsym $alt+Shift+Right move right
-
-# toggle fullscreen for focused window
 bindsym $sup+k fullscreen toggle
-bindsym $sup+Up fullscreen toggle
-# bindsym $alt+f fullscreen toggle
-# toggle floating mode for focused window
 bindsym $sup+j floating toggle
-bindsym $sup+Down floating toggle
-bindsym $alt+Shift+space floating toggle
+bindsym $alt+n fullscreen toggle
+bindsym $alt+m floating toggle
 
-# split in vertical orientation
-bindsym $alt+Control+Up split v
-bindsym $alt+Control+Down split v
-# split in horizontal orientation
-bindsym $alt+Control+Left split h
-bindsym $alt+Control+Right split h
-# toggle split orientation
 bindsym $alt+v split toggle
+bindsym $alt+minus split v
+bindsym $alt+backslash split h
 
-# change container layout (stacked, tabbed, toggle split)
+bindsym $alt+q layout tabbed
+bindsym $alt+w layout splith
+bindsym $alt+e layout splitv
 bindsym $alt+s layout stacking
-bindsym $alt+w layout tabbed
-bindsym $alt+e layout toggle split
-bindsym $alt+q layout toggle all
-
-bindsym $alt+1 layout splith
-bindsym $alt+2 layout splitv
-bindsym $alt+3 layout tabbed
-bindsym $alt+4 layout stacking
 
 # change focus between tiling / floating windows
 bindsym $alt+space focus mode_toggle
-
-# focus the parent container
-bindsym $alt+a focus parent
-
-# focus the child container
-bindsym $alt+d focus child
 # }}}
 
 # Workspace Navigation {{{
@@ -217,8 +168,6 @@ bindsym $sup+9 workspace $ws9
 bindsym $sup+0 workspace $ws10
 
 # switch workspace using left and right
-bindsym $sup+Left workspace prev
-bindsym $sup+Right workspace next
 bindsym $sup+h workspace prev
 bindsym $sup+l workspace next
 
@@ -250,50 +199,24 @@ bindsym $sup+o move container to workspace $ws9; workspace $ws9
 bindsym $sup+p move container to workspace $ws10; workspace $ws10
 
 # move focused container to next/prev workspace
-bindsym $sup+Shift+Left move container to workspace prev; workspace prev
-bindsym $sup+Shift+Right move container to workspace next; workspace next
 bindsym $sup+Shift+h move container to workspace prev; workspace prev
 bindsym $sup+Shift+l move container to workspace next; workspace next
 
 # move workspace to next/prev monitor
 bindsym $alt+$sup+h move workspace to output left
 bindsym $alt+$sup+l move workspace to output right
-bindsym $alt+$sup+Left move workspace to output left
-bindsym $alt+$sup+Right move workspace to output right
 
 # move focused container to next/prev monitor
 bindsym $alt+$sup+k move container to output left
 bindsym $alt+$sup+j move container to output right
-bindsym $alt+$sup+Up move container to output left
-bindsym $alt+$sup+Down move container to output right
 
 # }}}
 
 # Window Defaults {{{
 # Assign apps to default workspaces
 # Use xprop to get class
-#assign [class="class"] $ws#
+# assign [class="class"] $ws#
 #for_window [class="class"] move to workspace $ws#
-
-# Conky window
-# set $conky "Conky"
-# for_window [instance=$conky] floating enable
-# for_window [instance=$conky] resize set 400 410
-# for_window [instance=$conky] border pixel 5
-# bindsym Control+$alt+c exec conky
-
-# Mixer window
-# set $mixer "alsamixer"
-# for_window [title=$mixer] floating enable
-# for_window [title=$mixer] resize set 1000 600
-# for_window [title=$mixer] border pixel 5
-# bindsym Control+$alt+m exec terminator -e 'alsamixer' -T $mixer
-
-# QJackCTL window
-set $jack "QjackCtl"
-for_window [title=$jack] floating enable
-for_window [title=$jack] border pixel 5
-bindsym Control+$alt+j exec qjackctl
 
 # }}}
 
@@ -310,21 +233,6 @@ bindsym Control+$alt+j exec qjackctl
 # for_window [title=$dropdown] border pixel 5
 # exec --no-startup-id terminator -T $dropdown -e tmux
 # bindsym F9 [title=$dropdown] scratchpad show; [title=$dropdown] move position center
-
-# Spotify
-# set $spotify "spotify"
-# for_window [instance=$spotify] floating enable
-# for_window [instance=$spotify] resize set 1600 800
-# for_window [instance=$spotify] move scratchpad
-# for_window [instance=$spotify] border pixel 5
-# bindsym Control+$alt+s [instance=$spotify] scratchpad show; [instance=$spotify] move position center
-
-# OBS
-set $obs "obs"
-for_window [instance=$obs] floating enable
-for_window [instance=$obs] move scratchpad
-for_window [instance=$obs] border pixel 5
-bindsym Control+$alt+o [instance=$obs] scratchpad show; [instance=$obs] move position center
 
 # Torrent
 #set $torrent "deluge"
@@ -365,13 +273,6 @@ bindsym Control+$alt+l exec --no-startup-id "$CONFIG/scripts/runinstance.sh aran
 
 # }}}
 
-# Reload i3{{{
-# reload the configuration file
-bindsym $alt+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $alt+Shift+r restart
-# }}}
-
 # X Session/System Mode {{{
 # exit i3 (logs you out of your X session)
 bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -381,7 +282,7 @@ bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #set $Locker $linux_configs/scripts/lock.sh
 set $Locker $CONFIG/scripts/multimonitor_lock.sh -n -f
 
-set $mode_system "System (l) lock, (e) logout, (s) suspend, (t) troll suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown"
+set $mode_system "l: | e: | s: | t:ﮊ | h:⏾ | r:勒 | S: "
 mode $mode_system {
     bindsym l exec --no-startup-id $Locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
@@ -452,7 +353,6 @@ bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle"
 bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 3; notify-send -t 500 $(xbacklight)"
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 3; notify-send -t 500 $(xbacklight)"
 
-
 # Media player controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play
 bindsym XF86AudioPause exec --no-startup-id playerctl pause
@@ -521,37 +421,6 @@ bindsym --whole-window $alt+Shift+button5 resize shrink height 5px or 5ppt
 
 # }}}
 
-# Wallpaper and Compositing {{{
-# Desktop Wallpaper
-exec_always --no-startup-id feh --bg-scale --randomize $pictures/wallpapers/*
-
-# Compton: Xorg compositor 
-exec --no-startup-id compton
-
-# Set Grayscale
-# exec compton --backend glx --glx-fshader-win "$(cat $linux_configs/grayscale.glsl)"
-
-# i3-gaps
-# gaps inner 4
-# gaps outer 2
-for_window [class="^.*"] border pixel 1
-# }}}
-
-# Glava Audio Visualizer {{{
-#exec --no-startup-id glava --desktop --entry=screen1.glsl
-#exec --no-startup-id glava --desktop --entry=screen2.glsl
-
-bindsym $alt+Control+g exec --no-startup-id glava --desktop --entry=screen1.glsl, exec --no-startup-id glava --desktop --entry=screen2.glsl
-bindsym $alt+Control+Shift+g exec --no-startup-id killall glava
-
-# }}}
-
-# Troll Wallpaper {{{
-
-# bindsym $alt+Control+Delete exec --no-startup-id i3lock -u -i $(find $pictures/troll-wallpapers -name "*.png" | shuf -n1), mode "default"
-# bindsym Control+Shift+Escape exec --no-startup-id i3lock -u -i $(find $pictures/troll-wallpapers -name "*.png" | shuf -n1), mode "default"
-
-# }}}
 
 exec --no-startup-id nm-applet
 exec --no-startup-id /opt/pcloud
@@ -559,8 +428,13 @@ exec --no-startup-id pcloud
 exec --no-startup-id guake --no-startup-script
 exec --no-startup-id blueman-tray
 
-# Manjaro apps
-exec --no-startup-id volumeicon
+# Allow scripts to interface with dbus
+exec_always --no-startup-id ~/scripts/misc/Xdbus.sh
 
-#exec --no-startup-id start_conky_maia
+exec --no-startup-id volumeicon
+# exec_always --no-startup-id /usr/bin/python $DOTFILES/scripts/i3/alternating_layouts.py
+exec_always --no-startup-id pkill picom; picom --no-use-damage
+exec_always --no-startup-id pkill dunst; dunst
+exec_always --no-startup-id $DOTFILES/scripts/polybar/launch.sh
+
 # vim:foldmethod=marker:foldlevel=0

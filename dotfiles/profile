@@ -44,6 +44,7 @@ fi
 
 # Environment Variables {{{
 export CONFIG=$HOME/.linux-configs
+export DOTFILES=$HOME/.dotfiles
 export EDITOR=$(which vim)
 export TERMINAL=$(which urxvt)
 
